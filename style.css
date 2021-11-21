@@ -84,7 +84,7 @@ header h1{
     right: 0;
     background-color: #2b1331;
     background-image: linear-gradient(to top, #90b7e4 0%, #7a8592 100%);
-    opacity: 99%;
+    opacity: 100%;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px;
     transition: all 0.5s;
@@ -101,7 +101,7 @@ nav a {
     display: block;
     padding: 2vh 2vw;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     color: #fcf4f7;
     transition: all 0.3s linear;
@@ -141,6 +141,7 @@ main {
 #welcome-section h1 {
     font-family: 'Arima Madurai', cursive;
     font-size: 8vmin;
+    width: 80%;
 }
 
 /* ------------------------------------------- */
@@ -163,7 +164,7 @@ main {
 }
 
 #about p {
-    width: 50%;
+    width: 70%;
     text-align: center;
 }
 
@@ -173,7 +174,7 @@ main {
 }
 
 #about ul{
-    max-width: 40%;
+    max-width: 60%;
     font-size: 25px;
 }
 
@@ -279,7 +280,7 @@ main {
 
 .links a:hover {
     animation: rubberBand 1s;
-/*     color: #6386ac; */
+    color: #6386ac;
 }
 
 /* ------------------------------------------- */

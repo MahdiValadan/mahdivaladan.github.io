@@ -10,7 +10,12 @@ $(document).ready(function(){
             $("#nav-button-icon").text("menu");
         }
         else {
-            navbar.css("width","100%")
+            if (window.innerHeight > window.innerWidth){
+                navbar.css("width","100%")
+            }
+            else{
+                navbar.css("width","17%")
+            }
             $("#nav-button-icon").text("close");
         }
     })
