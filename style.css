@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(43, 43, 43);
+    background: linear-gradient(45deg, #2b3638 0%, #2d3135 100%);
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 30px;
+}
+
+/* ------------------------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 4vw;
+    position: fixed;
+    width: 100vw;
+    height: 9vh;
+    background: rgb(75, 0, 133);
+    background: linear-gradient(45deg, rgb(63, 138, 236) 0%, rgb(14, 154, 219) 50%, rgb(144, 0, 255) 100%);
+}
+header h1{
+    color: white;
+    font-family: 'Fleur De Leah', cursive;
+    font-size: 50px;
+}
+
+/* ------------------------------------------- */
+
+#nav-button{
+    background-color: transparent;
+    border: none;
+}
+#nav-button .material-icons{
+    font-size: 60px;
+    transition: all 1s ease;
+    color: white;
+}
+
+
+.animation-swing {
+    animation: swing 1s;
+}
+
+#navbar {
+    height:  100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 9vh;
+    right: 0;
+    background-color: #2b1331;
+    background-image: linear-gradient(to top, #90b7e4 0%, #7a8592 100%);
+    opacity: 99%;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px;
+    transition: all 0.5s;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+nav a {
+    display: block;
+    padding: 2vh 2vw;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fcf4f7;
+    transition: all 0.3s linear;
+}
+
+nav a:hover {
+    color: rgb(240, 197, 197);
+}
+
+
+/* ------------------------------------------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: azure;
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./img/nature.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#welcome-section h1 {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 8vmin;
+}
+
+/* ------------------------------------------- */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 50px 0;
+}
+#about img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#about p {
+    width: 50%;
+    text-align: center;
+}
+
+#about h2{
+    color: #90b7e4;
+    margin-bottom: -30px;
+}
+
+#about ul{
+    max-width: 40%;
+    font-size: 25px;
+}
+
+#about li {
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------------------- */
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #3c5794 0%, #182848 100%);
+    width: 100%;
+    min-height: 70vh;
+    gap: 60px;
+    /* padding: 30px 0; */
+}
+
+#projects h1 {
+    padding: 0px 30px 5px 30px;
+    border-bottom: 1px solid silver;
+}
+
+#projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 10vw;
+}
+
+#projects a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+#projects h3{
+    margin-bottom: 20px;
+}
+#projects img{
+    width: 10vmax;
+    height: 10vmax;
+}
+
+#projects a:hover{
+    animation: jello 1s;
+    color: #9abde2;
+}
+
+/* ------------------------------------------- */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 70vh;
+    gap: 50px;
+    /* padding: 30px 0; */
+    background: url('./img/nature-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contact h1{
+    padding: 0px 30px 5px 30px;
+    border-bottom: 2px solid silver;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+}
+
+
+.links img {
+    /* width: 7vmax; */
+    height: 90px;
+    object-fit: contain;
+    padding-bottom: 20px;
+
+}
+
+.links a {
+    display: block;
+    text-decoration: none;
+    color: azure;
+    transition: all 0.4s linear;
+}
+
+.links a:hover {
+    animation: rubberBand 1s;
+    color: #6386ac;
+}
+
+/* ------------------------------------------- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top: 4px groove plum;
+    width: 100%;
+    padding: 15px;
+    gap: 5px;
+    color: azure;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+footer a{
+    color: azure;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+    #nav-button .material-icons{
+        font-size: 40px;
+    }
+    nav a {
+        font-size: 25px;
+    }
+    #about img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #about p {
+        font-size: 15px;
+        width: 70%;
+    }
+    
+    #about ul{
+        font-size: 15px;
+        max-width: 60%;
+    }
+
+    .links img {
+        /* width: 7vmax; */
+        height: 60px;
+        object-fit: contain;    
+    }
+    footer p {
+        font-size: 7px;
+    }
+}
