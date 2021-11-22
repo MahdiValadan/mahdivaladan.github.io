@@ -280,7 +280,7 @@ main {
 
 .links a:hover {
     animation: rubberBand 1s;
-    color: #6386ac;
+/*     color: #6386ac; */
 }
 
 /* ------------------------------------------- */
