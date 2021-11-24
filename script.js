@@ -19,5 +19,11 @@ $(document).ready(function(){
             $("#nav-button-icon").text("close");
         }
     })
+    $('.nav-link').click(function (){
+        if(window.innerHeight > window.innerWidth){
+            $('#navbar').css("width","0%")
+            $("#nav-button-icon").text("menu");
+        }
+    })
 
 })
