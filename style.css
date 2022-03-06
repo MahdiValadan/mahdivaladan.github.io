@@ -13,8 +13,7 @@ html {
 }
 
 body {
-    background-color: rgb(43, 43, 43);
-    background: linear-gradient(45deg, #2b3638 0%, #2d3135 100%);
+    background-color: #282b30;
     font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
@@ -23,19 +22,21 @@ body {
 
 h1 {
     font-family: 'Arima Madurai', cursive;
-    font-size: 50px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 p {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /* ------------------------------------------- */
@@ -45,20 +46,18 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding: 0 4vw;
+    padding: 15px;
     position: fixed;
     width: 100vw;
-    height: 9vh;
-    background: rgb(75, 0, 133);
-    background: linear-gradient(45deg, rgb(63, 138, 236) 0%, rgb(14, 154, 219) 50%, rgb(144, 0, 255) 100%);
+    height: 75px;
+    background: transparent;
+    background: linear-gradient(45deg, rgb(63, 138, 236, 0.95) 0%, rgb(14, 154, 219, 0.95) 50%, rgba(144, 0, 255, 0.95) 100%);
 }
 header h1{
     color: white;
     font-family: 'Fleur De Leah', cursive;
-    font-size: 50px;
+    font-size: 40px;
 }
-
-/* ------------------------------------------- */
 
 #nav-button{
     background-color: transparent;
@@ -68,26 +67,28 @@ header h1{
     font-size: 60px;
     transition: all 1s ease;
     color: white;
+    text-shadow: 2px 2px 2px black;
+    margin-right: 15px;
 }
-
-
 .animation-swing {
     animation: swing 1s;
 }
+
+/* ------------------------------------------- */
 
 #navbar {
     height:  100%;
     width: 0%;
     position: fixed;
     z-index: 1;
-    top: 9vh;
+    top: 75px;
     right: 0;
-    background-color: #2b1331;
-    background-image: linear-gradient(to top, #90b7e4 0%, #7a8592 100%);
-    opacity: 100%;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background: #a05bb1 linear-gradient(45deg, rgb(63, 138, 236) 0%, rgb(14, 154, 219) 50%, rgba(144, 0, 255) 100%);
+    opacity: 95%;
+    overflow-x: hidden;
     padding-top: 60px;
     transition: all 0.5s;
+    box-shadow: -1.5px -1.5px 1px 0px rgb(20, 20, 20);
 }
 nav ul {
     display: flex;
@@ -117,6 +118,7 @@ nav a:hover {
 main {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     color: azure;
 }
@@ -137,20 +139,20 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 #welcome-section h1 {
     font-family: 'Arima Madurai', cursive;
-    font-size: 8vmin;
+    font-size: 70px;
     width: 80%;
 }
 
-/* ------------------------------------------- */
+/*===== About =====*/
 
 #about {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     text-align: center;
     gap: 50px;
     width: 100%;
@@ -164,26 +166,68 @@ main {
 }
 
 #about p {
-    width: 70%;
+    width: 60%;
     text-align: center;
 }
 
 #about h2{
+    color: rgb(69, 210, 253);
+    margin-bottom: -20px;
+}
+
+.list-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.list-cont h2{
+    margin-bottom: 20px !important;
+}
+
+.list{
+    list-style-position: outside;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    text-align: left;
+    font-size: 18px;
+}
+.list li {
+    width: 100%;
+    margin: 20px;
+}
+
+.skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 50px 100px;
+}
+.skills h3{
     color: #90b7e4;
-    margin-bottom: -30px;
+    margin-bottom: 30px;
+}
+.skills ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+}
+.skills li{
+    width: 50%;
+    margin: 10px 40px;
 }
 
-#about ul{
-    max-width: 60%;
-    font-size: 25px;
-}
-
-#about li {
-    margin-bottom: 10px;
-}
-
-
-/* ------------------------------------------- */
+/*===== Projects =====*/
 
 #projects {
     display: flex;
@@ -191,11 +235,12 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, #3c5794 0%, #182848 100%);
+    /* background: linear-gradient(90deg, #3c5794 0%, #182848 100%); */
+    background: url(./img/shape.jpg) no-repeat center;
+    background-size: cover;
     width: 100%;
-    min-height: 70vh;
-    gap: 60px;
-    /* padding: 30px 0; */
+    height: 750px;
+    gap: 70px;
 }
 
 #projects h1 {
@@ -220,10 +265,11 @@ main {
 
 #projects h3{
     margin-bottom: 20px;
+    color: rgb(107, 248, 171);
 }
 #projects img{
-    width: 10vmax;
-    height: 10vmax;
+    width: 100px;
+    aspect-ratio: 1/1;
 }
 
 #projects a:hover{
@@ -231,7 +277,7 @@ main {
     color: #9abde2;
 }
 
-/* ------------------------------------------- */
+/*===== Contact =====*/
 
 #contact {
     display: flex;
@@ -240,12 +286,9 @@ main {
     align-items: center;
     text-align: center;
     width: 100%;
-    min-height: 70vh;
-    gap: 50px;
-    /* padding: 30px 0; */
-    background: url('./img/nature-2.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 750px;
+    gap: 70px;
+    background: url('./img/nature-2.jpg') no-repeat center;
     background-size: cover;
 }
 
@@ -259,13 +302,17 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5vw;
+    width: 800px;
 }
 
+.links{
+    width: 33%;
+    text-align: center;
+}
 
 .links img {
-    /* width: 7vmax; */
-    height: 90px;
+    width: 90px;
+    aspect-ratio: 1/1;
     object-fit: contain;
     padding-bottom: 20px;
 
@@ -283,29 +330,27 @@ main {
     /* color: #6386ac; */
 }
 
-/* ------------------------------------------- */
-
+/*===== FOOTER =====*/
 footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border-top: 4px groove plum;
+    border-top: 4px groove rgb(29, 183, 255);
     width: 100%;
-    padding: 15px;
+    padding: 20px 15px;
     gap: 5px;
     color: azure;
 }
-
 footer p {
     font-size: 15px;
 }
-
 footer a{
     color: azure;
 }
 
-@media only screen and (max-width: 768px) {
+/*===== RESPONSIVE =====*/
+@media only screen and (max-width: 900px) {
     h1 {
         font-size: 25px;
     }
@@ -314,39 +359,58 @@ footer a{
     }
 
     h3 {
-        font-size: 15px;
+        font-size: 17px;
     }
-
+    header{
+        height: 50px;
+    }
     header h1 {
         font-size: 25px;
     }
     #nav-button .material-icons{
         font-size: 40px;
     }
+    #navbar{
+        top: 50px;
+    }
     nav a {
         font-size: 20px;
     }
+
+    #welcome-section h1{
+        font-size: 35px;
+    }
+
     #about img {
         width: 150px;
         height: 150px;
     }
-    
     #about p {
         font-size: 15px;
         width: 70%;
     }
-    
-    #about ul{
+    .list{
+        width: 80%;
+        font-size: 13px;
+    }
+    .skills ul{
         font-size: 15px;
-        max-width: 60%;
+    }
+    #projects, #contact{
+        min-height: calc(100vh - 50px);
+    }
+    #projects img{
+        width: 60px;
     }
 
+    .social-links{
+        width: 90%;
+    }
     .links img {
-        /* width: 7vmax; */
         height: 60px;
         object-fit: contain;    
     }
     footer p {
-        font-size: 7px;
+        font-size: 9px;
     }
 }
