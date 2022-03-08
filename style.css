@@ -46,10 +46,10 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding: 15px;
+    padding: 30px 15px;
     position: fixed;
     width: 100vw;
-    height: 75px;
+    height: 7vh;
     background: transparent;
     background: linear-gradient(45deg, rgb(63, 138, 236, 0.95) 0%, rgb(14, 154, 219, 0.95) 50%, rgba(144, 0, 255, 0.95) 100%);
 }
@@ -81,7 +81,7 @@ header h1{
     width: 0%;
     position: fixed;
     z-index: 1;
-    top: 75px;
+    top: 7vh;
     right: 0;
     background: #a05bb1 linear-gradient(45deg, rgb(63, 138, 236) 0%, rgb(14, 154, 219) 50%, rgba(144, 0, 255) 100%);
     opacity: 95%;
@@ -154,7 +154,7 @@ main {
     align-items: center;
     align-content: center;
     text-align: center;
-    gap: 50px;
+    /* gap: 50px; */
     width: 100%;
     min-height: 100vh;
     margin: 50px 0;
@@ -163,6 +163,7 @@ main {
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    margin: 50px 0;
 }
 
 #about p {
@@ -172,7 +173,7 @@ main {
 
 #about h2{
     color: rgb(69, 210, 253);
-    margin-bottom: -20px;
+    margin: 50px 0 30px 0;
 }
 
 .list-cont{
@@ -182,9 +183,10 @@ main {
     align-items: center;
     width: 100%;
 }
-.list-cont h2{
+
+/* .list-cont h2{
     margin-bottom: 20px !important;
-}
+} */
 
 .list{
     list-style-position: outside;
@@ -208,7 +210,10 @@ main {
     align-items: flex-start;
     flex-wrap: wrap;
     text-align: center;
-    gap: 50px 100px;
+    /* gap: 50px 100px; */
+}
+.skills div{
+    margin: 0px 50px 50px 50px;
 }
 .skills h3{
     color: #90b7e4;
@@ -235,17 +240,17 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(90deg, #3c5794 0%, #182848 100%); */
     background: url(./img/shape.jpg) no-repeat center;
     background-size: cover;
     width: 100%;
     height: calc(100vh - 75px);
-    gap: 70px;
+    /* gap: 70px; */
 }
 
 #projects h1 {
     padding: 0px 30px 5px 30px;
     border-bottom: 1px solid silver;
+    margin-bottom: 50px;
 }
 
 #projects-container{
@@ -254,13 +259,14 @@ main {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    gap: 10vw;
+    /* gap: 10vw; */
 }
 
 #projects a{
     color: white;
     text-decoration: none;
     transition: all 0.3s linear;
+    margin: 0 5vw;
 }
 
 #projects h3{
@@ -287,7 +293,7 @@ main {
     text-align: center;
     width: 100%;
     height: calc(100vh - 75px);
-    gap: 70px;
+    /* gap: 70px; */
     background: url('./img/nature-2.jpg') no-repeat center;
     background-size: cover;
 }
@@ -295,6 +301,7 @@ main {
 #contact h1{
     padding: 0px 30px 5px 30px;
     border-bottom: 2px solid silver;
+    margin-bottom: 50px;
 }
 
 .social-links {
@@ -327,7 +334,6 @@ main {
 
 .links a:hover {
     animation: rubberBand 1s;
-    /* color: #6386ac; */
 }
 
 /*===== FOOTER =====*/
@@ -361,18 +367,15 @@ footer a{
     h3 {
         font-size: 17px;
     }
-    header{
-        height: 65px;
-    }
+    
     header h1 {
         font-size: 25px;
     }
+
     #nav-button .material-icons{
         font-size: 40px;
     }
-    #navbar{
-        top: 65px;
-    }
+
     nav a {
         font-size: 20px;
     }
