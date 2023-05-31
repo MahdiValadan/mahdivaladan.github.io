@@ -14,7 +14,7 @@ $(document).ready(function(){
                 navbar.css("width","100%")
             }
             else{
-                navbar.css("width","17%")
+                navbar.css("width","300px")
             }
             $("#nav-button-icon").text("close");
         }
