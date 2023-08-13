@@ -1,48 +1,128 @@
 <!DOCTYPE html>
 <html>
+<!-- Head -->
 
 <head>
-
+    <!-- Title -->
     <title>Mahdi Valadan</title>
-
+    <!-- Meta -->
     <meta charset="UTF-8">
-    <meta name="description" content="Personal Portfolio">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Mahdi Valadan">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0ea1db">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="icon" type="image/png" href="./icon/fox.png" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="script.js"></script>
-
+    <meta
+        name="description"
+        content="Personal Portfolio"
+    >
+    <meta
+        name="keywords"
+        content="HTML, CSS, JavaScript"
+    >
+    <meta
+        name="author"
+        content="Mahdi Valadan"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="theme-color"
+        content="#0ea1db"
+    >
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="style.css"
+    />
+    <!-- ICON -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="./icon/fox.png"
+    />
+    <!-- Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+    >
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
+    <!-- animation -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    >
+    <!-- ALPINEJS -->
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- scripts -->
+    <script
+        type="text/javascript"
+        src="script.js"
+    >
+    </script>
 </head>
+<!-- Body -->
 
 <body>
-
-    <header id="header">
-        <h1 id ="logo">Mahdi Valadan</h1>
-
-        <button type="menu" id="nav-button">
-            <span id="nav-button-icon" class="material-icons">
-                menu
+    <!-- header -->
+    <header
+        id="header"
+        x-data="menu"
+    >
+        <h1 id="logo">Mahdi Valadan</h1>
+        <button
+            id="nav-button"
+            @click="toggle"
+        >
+            <span
+                id="nav-button-icon"
+                class="material-icons"
+                x-text="icon"
+            >
             </span>
         </button>
 
-        <nav id='navbar'>
+        <nav
+            id='navbar'
+            :style="{width: menuWidth}"
+        >
             <ul>
-                <li> <a href="#welcome-section" class="nav-link"> Home</a> </li>
-                <li> <a href="#about" class="nav-link"> About </a> </li>
-                <li> <a href="#projects" class="nav-link"> Projects </a> </li>
-                <li> <a href="#contact" class="nav-link"> Contact </a> </li>
+                <li>
+                    <a
+                        href="#welcome-section"
+                        class="nav-link"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#about"
+                        class="nav-link"
+                    >
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#projects"
+                        class="nav-link"
+                    >
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#contact"
+                        class="nav-link"
+                    >
+                        Contact
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -53,60 +133,59 @@
         <section id="welcome-section">
             <h1>Welcome to my Personal website</h1>
         </section>
-        
+
         <section id="about">
             <h1>About Me</h1>
-            <img src="./img/profile.jpg" alt="">
+            <img
+                src="./img/profile.jpg"
+                alt=""
+            >
             <p>My name is Mahdi Valadan a computer science student. I love web developing and game design. My main hobby
-            is playing video games either with friends or alone.</p>
-            
+                is playing video games either with friends or alone.</p>
+
             <div class="list-cont">
                 <h2>Education</h2>
                 <ul class="list">
-                    <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran. (2017-2022)</li>
+                    <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran. (2017-2022)
+                    </li>
                 </ul>
             </div>
-            
+
             <h2>Skills</h2>
             <div class="skills">
                 <div>
                     <h3>Programming Languages & Technologies</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>PHP</li>
-                        <li>Java</li>
-                        <li>C/C++</li>
-                        <li>x86 Assembly</li>
-                        <li>MATLAB</li>
+                    <ul x-data="{pl: programmingLangs}">
+                        <template x-for="p in pl">
+                            <li x-text="p"></li>
+                        </template>
                     </ul>
                 </div>
                 <div>
                     <h3>Frameworks & Libraries & Databases</h3>
-                    <ul>
-                        <li>jQuery</li>
-                        <li>React.js</li>
-                        <li>Vue.js</li>
-                        <li>Nuxt.js</li>
-                        <li>Express.js</li>
-                        <li>MongoDB</li>
-                        <li>MySQL</li>
+                    <ul x-data="{fw: frameworks}">
+                        <template x-for="f in fw">
+                            <li x-text="f"></li>
+                        </template>
                     </ul>
                 </div>
             </div>
 
             <div class="list-cont">
-                <h2 >Experience</h2>
+                <h2>Experience</h2>
                 <ul class="list">
-                    <li>Teaching Assistant in Internet Engineering, Faculty of Computer Engineering, K.N. Toosi University
-                    (winter 2022)</li>
+                    <li>Teaching Assistant in Internet Engineering, Faculty of Computer Engineering, K.N. Toosi
+                        University
+                        (winter 2022)</li>
                     <li>Summer internship in National Library of Iran (Summer 2021)</li>
-                    <li>Getting Web Developing Certificates from FreeCodeCamp (Link is available in contact session) (Winter
-                    2021)</li>
-                    <li>Teaching Assistant in Compiler Design, Faculty of Computer Engineering, K.N. Toosi University (Fall 2020)</li>
-                    <li>Contribution as a Python programmer in a project entitled: “Automatic updating of spatial databases using satellite images”, Iran's National Elites Foundation, Tehran, Iran. (Summer 2020)</li>
+                    <li>Getting Web Developing Certificates from FreeCodeCamp (Link is available in contact session)
+                        (Winter
+                        2021)</li>
+                    <li>Teaching Assistant in Compiler Design, Faculty of Computer Engineering, K.N. Toosi University
+                        (Fall 2020)</li>
+                    <li>Contribution as a Python programmer in a project entitled: “Automatic updating of spatial
+                        databases using satellite images”, Iran's National Elites Foundation, Tehran, Iran. (Summer
+                        2020)</li>
                 </ul>
             </div>
 
@@ -114,40 +193,81 @@
 
         <section id="projects">
             <h1>Links to My Projects</h1>
-                <div id="projects-container">
-                    <a href="https://github.com/MahdiValadan" target="_blank">
-                        <h3> Github </h3>
-                        <img src="./icon/github.png" alt="">
-                    </a>
-                    <a href="https://codepen.io/MV_77/pens/showcase" target="_blank">
-                        <h3> CodePen </h3>
-                        <img src="./icon/codepen.png" alt="">
-                    </a>
-                    <a href="https://replit.com/@MahdiValadan" target="_blank">
-                        <h3> Replit </h3>
-                        <img src="./icon/Replit.png" alt="">
-                    </a>
-                </div>
+            <div id="projects-container">
+                <a
+                    href="https://github.com/MahdiValadan"
+                    target="_blank"
+                >
+                    <h3> Github </h3>
+                    <img
+                        src="./icon/github.png"
+                        alt=""
+                    >
+                </a>
+                <a
+                    href="https://codepen.io/MV_77/pens/showcase"
+                    target="_blank"
+                >
+                    <h3> CodePen </h3>
+                    <img
+                        src="./icon/codepen.png"
+                        alt=""
+                    >
+                </a>
+                <a
+                    href="https://replit.com/@MahdiValadan"
+                    target="_blank"
+                >
+                    <h3> Replit </h3>
+                    <img
+                        src="./icon/Replit.png"
+                        alt=""
+                    >
+                </a>
+            </div>
         </section>
 
         <section id="contact">
             <h1>Contact Info</h1>
             <div class="social-links">
                 <div class="links">
-                    <a href="mailto:mahdivaladan@gmail.com" id="profile-link">
-                        <img src="./icon/email.png" alt="email">
+                    <a
+                        href="mailto:mahdivaladan@gmail.com"
+                        id="profile-link"
+                    >
+                        <img
+                            src="./icon/email.png"
+                            alt="email"
+                        >
                         <h3>Email</h3>
                     </a>
                 </div>
-                <div class="links" id="fcc">
-                    <a href="https://www.freecodecamp.org/mahdi_valadan" id="profile-link" target="_blank">
-                        <img src="./icon/fcc.png" alt="fcc">
+                <div
+                    class="links"
+                    id="fcc"
+                >
+                    <a
+                        href="https://www.freecodecamp.org/mahdi_valadan"
+                        id="profile-link"
+                        target="_blank"
+                    >
+                        <img
+                            src="./icon/fcc.png"
+                            alt="fcc"
+                        >
                         <h3>FreeCodeCamp</h3>
                     </a>
                 </div>
                 <div class="links">
-                    <a href="https://ir.linkedin.com/in/mahdi-valadan-4a5762182" id="profile-link" target="_blank">
-                        <img src="./icon/linkedin.png" alt="linkedin">
+                    <a
+                        href="https://ir.linkedin.com/in/mahdi-valadan-4a5762182"
+                        id="profile-link"
+                        target="_blank"
+                    >
+                        <img
+                            src="./icon/linkedin.png"
+                            alt="linkedin"
+                        >
                         <h3>Linkedin</h3>
                     </a>
                 </div>
@@ -155,17 +275,22 @@
         </section>
 
     </main>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; Copyright 2021 designed by Mahdi Valadan</p>
-        <p>Icons made by 
-            <a href="https://www.freepik.com" title="Freepik">Freepik</a> 
-            from 
-            <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a>
+        <p>Icons made by
+            <a
+                href="https://www.freepik.com"
+                title="Freepik"
+            >Freepik</a>
+            from
+            <a
+                href="https://www.flaticon.com/"
+                title="Flaticon"
+            >www.flaticon.com</a>
         </p>
     </footer>
-
+    <!-- S -->
 </body>
 
 </html>
-
