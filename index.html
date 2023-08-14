@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <!-- Head -->
-
 <head>
     <!-- Title -->
     <title>Mahdi Valadan</title>
@@ -66,9 +65,8 @@
     </script>
 </head>
 <!-- Body -->
-
 <body>
-    <!-- header -->
+    <!-- Header -->
     <header
         id="header"
         x-data="menu"
@@ -127,70 +125,70 @@
         </nav>
 
     </header>
-
+    <!-- Main -->
     <main>
-
         <section id="welcome-section">
-            <h1>Welcome to my Personal website</h1>
+            <h1 class="animate__animated animate__lightSpeedInLeft">
+                Welcome to my Personal website
+            </h1>
         </section>
-
+        <!-- ABOUT Section -->
         <section id="about">
-            <h1>About Me</h1>
-            <img
-                src="./img/profile.jpg"
-                alt=""
-            >
-            <p>My name is Mahdi Valadan a computer science student. I love web developing and game design. My main hobby
-                is playing video games either with friends or alone.</p>
-
-            <div class="list-cont">
-                <h2>Education</h2>
-                <ul class="list">
-                    <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran. (2017-2022)
-                    </li>
-                </ul>
+            <div class="about-container">
+                <h1>About Me</h1>
+                <p
+                    x-data="{aboutMe: aboutMe}"
+                    x-text="aboutMe"
+                ></p>
             </div>
-
-            <h2>Skills</h2>
-            <div class="skills">
-                <div>
-                    <h3>Programming Languages & Technologies</h3>
-                    <ul x-data="{pl: programmingLangs}">
-                        <template x-for="p in pl">
-                            <li x-text="p"></li>
-                        </template>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Frameworks & Libraries & Databases</h3>
-                    <ul x-data="{fw: frameworks}">
-                        <template x-for="f in fw">
-                            <li x-text="f"></li>
-                        </template>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="list-cont">
-                <h2>Experience</h2>
-                <ul class="list">
-                    <li>Teaching Assistant in Internet Engineering, Faculty of Computer Engineering, K.N. Toosi
-                        University
-                        (winter 2022)</li>
-                    <li>Summer internship in National Library of Iran (Summer 2021)</li>
-                    <li>Getting Web Developing Certificates from FreeCodeCamp (Link is available in contact session)
-                        (Winter
-                        2021)</li>
-                    <li>Teaching Assistant in Compiler Design, Faculty of Computer Engineering, K.N. Toosi University
-                        (Fall 2020)</li>
-                    <li>Contribution as a Python programmer in a project entitled: “Automatic updating of spatial
-                        databases using satellite images”, Iran's National Elites Foundation, Tehran, Iran. (Summer
-                        2020)</li>
-                </ul>
-            </div>
-
         </section>
-
+        <!-- CV Section-->
+        <section id="cv">
+            <!-- Education -->
+            <div class="list-cont">
+                <h1>Education</h1>
+                    <ul class="list">
+                        <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran.
+                            (2017-2022)
+                        </li>
+                    </ul>
+            </div>
+            <!-- Skills -->
+            <div class="skills">
+                <h1>Skills</h1>
+                <div class="two-col">
+                    <div>
+                        <h2>Programming Languages & Technologies</h2>
+                        <ul x-data="{pl: programmingLangs}">
+                            <template x-for="p in pl">
+                                <li x-text="p"></li>
+                            </template>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Frameworks & Libraries & Databases</h2>
+                        <ul x-data="{fw: frameworks}">
+                            <template x-for="f in fw">
+                                <li x-text="f"></li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Experiences-->
+            <div class="list-cont">
+                <h1>Experience</h1>
+                <ul
+                    class="list"
+                    x-data="{ex: experiences}"
+                >
+                    <template x-for="e in ex">
+                        <li x-text="e"></li>
+                    </template>
+                </ul>
+            </div>
+        </section>
+        <!-- PROJECTS LINKS -->
         <section id="projects">
             <h1>Links to My Projects</h1>
             <div id="projects-container">
@@ -226,7 +224,7 @@
                 </a>
             </div>
         </section>
-
+        <!-- Contact Info -->
         <section id="contact">
             <h1>Contact Info</h1>
             <div class="social-links">
@@ -273,7 +271,6 @@
                 </div>
             </div>
         </section>
-
     </main>
     <!-- Footer -->
     <footer>
@@ -290,7 +287,5 @@
             >www.flaticon.com</a>
         </p>
     </footer>
-    <!-- S -->
 </body>
-
 </html>
