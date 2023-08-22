@@ -79,10 +79,6 @@ header h1 {
     animation: swing 1s;
 }
 
-.animation-swing-2 {
-    animation: swing 1s;
-}
-
 /*  NAVBAR  */
 
 #navbar {
@@ -173,11 +169,11 @@ main {
 }
 
 .about-container {
-    margin: 50px 60px 0 550px;
+    margin: 50px 60px 0 40vw;
 }
 
 #about h1 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #about p {
@@ -266,19 +262,29 @@ main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background: url(./img/shape.jpg) no-repeat center;
     background-size: cover;
     width: 100%;
     height: calc(100vh - 75px);
-    /* gap: 70px; */
+    padding: 30px 0;
 }
+
 
 #projects h1 {
     padding: 0px 30px 5px 30px;
     border-bottom: 1px solid silver;
     margin-bottom: 50px;
+}
+
+#showcase {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: auto;
 }
 
 #projects-container {
@@ -287,6 +293,12 @@ main {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+
 }
 
 #projects a {
@@ -418,14 +430,16 @@ footer a {
     #about {
         background-size: 100% 100%;
     }
+
     .about-container {
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur( 20px );
+        -webkit-backdrop-filter: blur(20px);
         padding: 20px;
         margin: 0;
     }
+
     #about h1 {
         margin: 0;
         margin-bottom: 10px;

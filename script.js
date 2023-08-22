@@ -14,6 +14,8 @@ let experiences = [
     'Contribution as a Python programmer in a project entitled: Automatic updating of spatial databases using satellite images, Iran\'s National Elites Foundation, Tehran, Iran. (Summer2020)'
 ]
 
+let showcase = [{name: 'RIKI VC', url: 'https://riki-vc.vercel.app/'},]
+
 let width = '350px'
 // Check whether user device is vertical or horizontal 
 if (window.innerHeight > window.innerWidth) {
