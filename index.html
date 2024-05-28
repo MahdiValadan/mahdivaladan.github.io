@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <!-- Head -->
-
 <head>
     <!-- Title -->
     <title>Mahdi Valadan</title>
@@ -20,15 +19,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- ALPINEJS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- scripts -->
-    <script type="text/javascript" src="script.js">
-    </script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <!-- Body -->
-
 <body>
     <!-- Header -->
     <header id="header" x-data="menu">
@@ -37,7 +37,7 @@
             <span id="nav-button-icon" class="material-icons" x-text="icon">
             </span>
         </button>
-
+        <!-- Navbar -->
         <nav id='navbar' :style="{width: menuWidth}">
             <ul>
                 <li>
@@ -62,7 +62,6 @@
                 </li>
             </ul>
         </nav>
-
     </header>
     <!-- Main -->
     <main>
@@ -73,7 +72,7 @@
         </section>
         <!-- ABOUT Section -->
         <section id="about">
-            <div class="about-container">
+            <div class="about-container" data-aos="fade-right">
                 <h1>About Me</h1>
                 <p x-data="{aboutMe: aboutMe}" x-text="aboutMe"></p>
             </div>
@@ -81,19 +80,20 @@
         <!-- CV Section-->
         <section id="cv">
             <!-- Education -->
-            <div class="list-cont">
+            <div class="list-cont" data-aos="fade-up">
                 <h1>Education</h1>
                 <ul class="list">
                     <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran.
                         (2017-2022)
                     </li>
                     <li>
-                        Master of Computer Science and Engineering, Politecnico di Milano, Milan, Italy. (2022 - Now)
+                        Master of Computer Science and Engineering, Politecnico di Milano, Milan, Italy. (2022 -
+                        Now)
                     </li>
                 </ul>
             </div>
             <!-- Skills -->
-            <div class="skills">
+            <div class="skills" data-aos="flip-left">
                 <h1>Skills</h1>
                 <div class="two-col">
                     <div>
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <!-- Experiences-->
-            <div class="list-cont">
+            <div class="list-cont" data-aos="flip-right">
                 <h1>Experience</h1>
                 <ul class="list" x-data="{ex: experiences}">
                     <template x-for="e in ex">
@@ -127,7 +127,7 @@
         <!-- PROJECTS LINKS -->
         <section id="projects">
             <h1>Links to My Projects</h1>
-            <div id="projects-container" x-data="projects">
+            <div id="projects-container" x-data="projects" data-aos="zoom-in">
                 <template x-for="project in projects">
                     <a :href="project.url" target="_blank">
                         <p x-text="project.name"></p>
@@ -139,7 +139,7 @@
         <!-- Contact Info -->
         <section id="contact">
             <h1>Contact Info</h1>
-            <div class="social-links">
+            <div class="social-links" data-aos="flip-up">
                 <div class="links">
                     <a href="mailto:mahdivaladan@gmail.com" id="profile-link">
                         <img src="./icon/email.png" alt="email">
@@ -178,6 +178,10 @@
             </a>
         </p>
     </footer>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-
 </html>
