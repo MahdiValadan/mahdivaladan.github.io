@@ -268,7 +268,7 @@ main {
     background-size: cover;
     width: 100%;
     min-height: calc(100vh - 75px);
-    padding: 30px;
+    padding: 60px 30px;
 }
 
 
@@ -278,14 +278,14 @@ main {
     margin-bottom: 50px;
 }
 
-#projects-container {
+.projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 80px;
     text-align: center;
-    padding: 40px;
+    padding: 80px 40px 0px 40px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -298,6 +298,7 @@ main {
     text-decoration: none;
     transition: all 0.3s linear;
     width: 200px;
+    /* margin-right: auto; */
 }
 
 #projects p {
@@ -310,9 +311,13 @@ main {
     aspect-ratio: 1/1;
 }
 
+#projects i {
+    font-size: 100px;
+}
+
 #projects a:hover {
     animation: jello 1s;
-    color: #9abde2;
+    /* color: #afd6ff; */
 }
 
 /*===== Contact =====*/
@@ -341,20 +346,19 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 800px;
+    gap: 50px;
+    /* width: 800px; */
 }
 
 .links {
-    width: 33%;
     text-align: center;
 }
 
 .links img {
-    width: 90px;
+    width: 100px;
     aspect-ratio: 1/1;
     object-fit: contain;
     padding-bottom: 20px;
-
 }
 
 .links a {

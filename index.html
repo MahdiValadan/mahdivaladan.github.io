@@ -13,16 +13,17 @@
     <meta name="theme-color" content="#0ea1db">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- ICON -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./icon/fox.png" />
-    <!-- Font -->
+    <!-- Google Font & Icon -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- animation -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- DevIcon -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <!-- ALPINEJS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- scripts -->
@@ -72,7 +73,7 @@
         </section>
         <!-- ABOUT Section -->
         <section id="about">
-            <div class="about-container" data-aos="fade-right">
+            <div class="about-container" data-aos="fade-up">
                 <h1>About Me</h1>
                 <p x-data="{aboutMe: aboutMe}" x-text="aboutMe"></p>
             </div>
@@ -127,13 +128,33 @@
         <!-- PROJECTS LINKS -->
         <section id="projects">
             <h1>Links to My Projects</h1>
-            <div id="projects-container" x-data="projects" data-aos="zoom-in">
+            <!-- Projects -->
+            <div class="projects-container" x-data="projects" data-aos="zoom-in">
                 <template x-for="project in projects">
                     <a :href="project.url" target="_blank">
                         <p x-text="project.name"></p>
-                        <img :src="project.icon" :alt="project.name">
+                        <i :class="project.icon"></i>
                     </a>
                 </template>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
+
+            </div>
+            <!-- Accounts -->
+            <div class="projects-container" x-data="accounts" data-aos="zoom-in" style="margin-top:
+            50px;">
+                <template x-for="account in accounts">
+                    <a :href="account.url" target="_blank">
+                        <p x-text="account.name"></p>
+                        <img :src="account.icon" :alt="account.name">
+                    </a>
+                </template>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
+                <a style="visibility: hidden;"></a>
             </div>
         </section>
         <!-- Contact Info -->
@@ -144,12 +165,6 @@
                     <a href="mailto:mahdivaladan@gmail.com" id="profile-link">
                         <img src="./icon/email.png" alt="email">
                         <h3>Email</h3>
-                    </a>
-                </div>
-                <div class="links" id="fcc">
-                    <a href="https://www.freecodecamp.org/mahdi_valadan" id="profile-link" target="_blank">
-                        <img src="./icon/fcc.png" alt="fcc">
-                        <h3>FreeCodeCamp</h3>
                     </a>
                 </div>
                 <div class="links">
