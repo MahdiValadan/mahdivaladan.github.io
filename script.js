@@ -1,4 +1,4 @@
-const aboutMe = 'My name is Mahdi Valadan. I recently obtain my Bachelor of computer engineering. I am passionate about web developing and game design. In my free time I like to travel, hanging out with my friends and family, enjoying nature, and playing video games.'
+const aboutMe = 'My name is Mahdi, and I am currently pursuing a Master\'s in Computer Science at Politecnico di Milano.I am passionate about game and web development, as well as anything that involves designing and creating new things.In my free time, I enjoy traveling, experiencing nature, exploring new cultures, spending time with friends and family, and playing video games.'
 
 const programmingLangs = [
     'HTML5', 'CSS', 'JavaScript', 'Python', 'PHP', 'Java', 'C/C++', 'C#', 'x86 Assembly', 'MATLAB'
