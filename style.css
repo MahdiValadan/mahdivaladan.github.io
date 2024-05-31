@@ -462,6 +462,10 @@ footer a {
         min-height: calc(100vh - 50px);
     }
 
+    .projects-container {
+        width: 90%;
+    }
+
     #projects i {
         font-size: 60px;
     }
