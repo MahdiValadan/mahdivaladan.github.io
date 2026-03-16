@@ -1,195 +1,645 @@
 <!DOCTYPE html>
-<html>
-<!-- Head -->
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
-    <!-- Title -->
+    <!-- Page metadata -->
     <title>Mahdi Valadan</title>
-    <!-- Meta -->
     <meta charset="UTF-8">
-    <meta name="description" content="Personal Portfolio">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta
+        name="description"
+        content="Mahdi Valadan is a full-stack developer in Italy focused on data-rich web platforms, WebGIS, modern frontend systems, and interactive applications."
+    >
+    <meta name="keywords" content="Mahdi Valadan, Full-Stack Developer, Next.js, Python, WebGIS, Portfolio">
     <meta name="author" content="Mahdi Valadan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0ea1db">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./icon/fox.png" />
-    <!-- Google Font & Icon -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="icon" type="image/png" href="./icon/fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Fleur+De+Leah&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- animation -->
+    <!-- Tailwind theme setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        body: ['IBM Plex Sans', 'sans-serif'],
+                        display: ['Cormorant Garamond', 'serif'],
+                        logo: ['Fleur De Leah', 'cursive'],
+                        accent: ['Arima Madurai', 'cursive'],
+                        mono: ['IBM Plex Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        glow: '0 30px 80px rgba(8, 15, 30, 0.45)',
+                    },
+                },
+            },
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- DevIcon -->
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <!-- ALPINEJS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+    <!-- Local content and Alpine behavior -->
+    <script defer src="script.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- scripts -->
-    <script type="text/javascript" src="script.js"></script>
 </head>
-<!-- Body -->
-<body>
-    <!-- Header -->
-    <header id="header" x-data="menu">
-        <h1 id="logo">Mahdi Valadan</h1>
-        <button id="nav-button" @click="toggle">
-            <span id="nav-button-icon" class="material-icons" x-text="icon">
-            </span>
-        </button>
-        <!-- Navbar -->
-        <nav id='navbar' :style="{width: menuWidth}">
-            <ul>
-                <li>
-                    <a href="#welcome-section" class="nav-link">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#about" class="nav-link">
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="#projects" class="nav-link">
-                        Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact" class="nav-link">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Main -->
-    <main>
-        <section id="welcome-section">
-            <h1 class="animate__animated animate__lightSpeedInLeft">
-                Welcome to my Personal website
-            </h1>
-        </section>
-        <!-- ABOUT Section -->
-        <section id="about">
-            <div class="about-container" data-aos="fade-up">
-                <h1>About Me</h1>
-                <p x-data="{aboutMe: aboutMe}" x-text="aboutMe"></p>
-            </div>
-        </section>
-        <!-- CV Section-->
-        <section id="cv">
-            <!-- Education -->
-            <div class="list-cont" data-aos="fade-up">
-                <h1>Education</h1>
-                <ul class="list">
-                    <li>Bachelor of Computer Engeering, K. N. Toosi University of Technology, Tehran, Iran.
-                        (2017-2022)
+<body class="min-h-screen overflow-x-hidden bg-[#050b16] font-body text-slate-100 selection:bg-cyan-300/25">
+    <!-- Background layers -->
+    <div class="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(148,163,184,0.12),transparent_24%),linear-gradient(180deg,#020617_0%,#071120_40%,#030712_100%)]"></div>
+    <div class="fixed inset-0 -z-10 bg-[url('./img/dev-cyan.png')] bg-cover bg-top opacity-[0.08]"></div>
+
+    <!-- Header and navigation -->
+    <header
+        x-data="menu"
+        class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/65 backdrop-blur-2xl"
+    >
+        <div class="mx-auto flex items-center justify-between px-6 py-5 lg:px-10">
+            <!-- Brand / logo -->
+            <a href="#welcome-section" class="flex flex-col no-underline">
+                <span class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text font-logo text-3xl leading-none text-transparent lg:text-4xl">Mahdi Valadan</span>
+            </a>
+
+            <!-- Mobile nav toggle -->
+            <button
+                @click="toggle"
+                aria-label="Toggle navigation menu"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10 lg:hidden"
+            >
+                <span
+                    id="nav-button-icon"
+                    class="material-icons text-[30px]"
+                    x-text="icon"
+                ></span>
+            </button>
+
+            <!-- Main navigation -->
+            <nav
+                class="fixed right-0 top-[81px] z-40 h-[calc(100vh-81px)] overflow-hidden border-l border-white/10 bg-slate-950/95 backdrop-blur-2xl transition-all duration-500 lg:static lg:z-auto lg:h-auto lg:w-auto lg:border-0 lg:bg-transparent lg:backdrop-blur-none"
+                :class="open ? 'w-full sm:w-[380px] lg:w-auto' : 'w-0 lg:w-auto'"
+            >
+                <ul class="flex h-full flex-col items-center justify-center gap-6 px-10 lg:h-auto lg:flex-row lg:gap-8 lg:px-0">
+                    <li>
+                        <a
+                            href="#welcome-section"
+                            @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
+                        >
+                            Home
+                        </a>
                     </li>
                     <li>
-                        Master of Computer Science and Engineering, Politecnico di Milano, Milan, Italy. (2022 -
-                        Now)
+                        <a
+                            href="#about"
+                            @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
+                        >
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#experience"
+                            @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
+                        >
+                            Experience
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#projects"
+                            @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
+                        >
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
+                        >
+                            Contact
+                        </a>
                     </li>
                 </ul>
-            </div>
-            <!-- Skills -->
-            <div class="skills" data-aos="flip-left">
-                <h1>Skills</h1>
-                <div class="two-col">
-                    <div>
-                        <h2>Programming Languages & Technologies</h2>
-                        <ul x-data="{pl: programmingLangs}">
-                            <template x-for="p in pl">
-                                <li x-text="p"></li>
-                            </template>
-                        </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main x-data="portfolioContent" class="overflow-x-hidden">
+        <!-- Hero -->
+        <section id="welcome-section" class="relative overflow-hidden pt-32 lg:pt-36">
+            <div class="mx-auto grid max-w-7xl gap-14 px-6 pb-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-10">
+                <!-- Hero copy and actions -->
+                <div class="relative z-10 text-center lg:text-left" data-aos="fade-right">
+                    <span class="inline-flex max-w-full flex-wrap justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-center font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-100">
+                        Milan, Italy · Computer Engineer · Creative Tech
+                    </span>
+                    <h1 class="mt-7 max-w-4xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
+                        Full-stack developer drawn to creative technology, games, and polished digital products.
+                    </h1>
+                    <p
+                        x-text="heroSummary"
+                        class="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg lg:mx-0"
+                    ></p>
+
+                    <!-- Core focus tags -->
+                    <div class="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+                        <template x-for="item in expertise" :key="item">
+                            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 shadow-glow">
+                                <span x-text="item"></span>
+                            </span>
+                        </template>
                     </div>
-                    <div>
-                        <h2>Frameworks & Libraries & Databases</h2>
-                        <ul x-data="{fw: frameworks}">
-                            <template x-for="f in fw">
-                                <li x-text="f"></li>
-                            </template>
-                        </ul>
+
+                    <!-- Primary actions -->
+                    <div class="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
+                        <a
+                            href="#projects"
+                            class="rounded-full border border-teal-300/50 bg-teal-300/10 px-6 py-3 text-sm font-semibold text-teal-100 backdrop-blur-xl transition hover:border-teal-300 hover:bg-teal-300/15 hover:text-teal-200"
+                        >
+                            View selected work
+                        </a>
+                        <a
+                            href="./assets/CV-NN.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            class="rounded-full border border-purple-300/50 bg-purple-900/30 px-6 py-3 text-sm font-semibold text-purple-100 backdrop-blur-xl transition hover:border-purple-300 hover:bg-purple-300/15 hover:text-purple-200"
+                        >
+                            Download CV
+                        </a>
+                    </div>
+
+                    <!-- Quick stats -->
+                    <div class="mt-12 grid gap-4 sm:grid-cols-3">
+                        <template x-for="stat in introStats" :key="stat.label">
+                            <article class="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="stat.label"></p>
+                                <p class="mt-3 text-lg font-accent font-semibold text-white" x-text="stat.value"></p>
+                                <p class="mt-2 text-sm leading-6 text-slate-300" x-text="stat.note"></p>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Hero portrait composition -->
+                <div class="relative mx-auto h-[480px] w-full max-w-[520px] overflow-hidden lg:h-[620px]" data-aos="fade-left">
+                    <div class="absolute inset-0 rounded-[40px] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.24),transparent_45%)] blur-3xl"></div>
+                    <div class="absolute right-0 top-4 h-[420px] w-[300px] overflow-hidden rounded-[34px] border border-white/15 bg-white/10 p-3 shadow-glow backdrop-blur-2xl sm:w-[350px] lg:h-[540px] lg:w-[390px]">
+                        <img
+                            src="./img/me-1.jpg"
+                            alt="Mahdi Valadan portrait"
+                            class="h-full w-full rounded-[28px] object-cover object-top"
+                        >
+                    </div>
+                    <div class="absolute left-0 top-0 max-w-[230px] rounded-[28px] border border-white/10 bg-slate-900/75 p-5 shadow-glow backdrop-blur-xl">
+                        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-200">Current focus</p>
+                        <p class="mt-3 font-accent text-sm font-medium leading-8 text-white">
+                            Building production web products while continuing to explore games, interaction, and more expressive digital experiences.
+                        </p>
+                    </div>
+                    <div class="absolute bottom-0 left-4 max-w-[250px] rounded-[28px] border border-white/10 bg-white/10 p-5 shadow-glow backdrop-blur-xl">
+                        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-slate-300">How I work</p>
+                        <p class="mt-3 font- text-sm leading-8 text-slate-100">
+                            Detail-oriented, disciplined, and focused on making the final result feel refined, coherent, and complete.
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- Experiences-->
-            <div class="list-cont" data-aos="flip-right">
-                <h1>Experience</h1>
-                <ul class="list" x-data="{ex: experiences}">
-                    <template x-for="e in ex">
-                        <li x-text="e"></li>
+        </section>
+
+        <!-- Profile -->
+        <section class="relative -mt-6 pb-8" data-aos="fade-up">
+            <div class="mx-auto grid max-w-7xl gap-6 px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-10">
+                <!-- Profile summary card -->
+                <article class="rounded-[34px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Profile</p>
+                    <h2 class="mx-auto mt-4 max-w-3xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">
+                        Art, nature, and attention to detail shape the way I see and build digital work.
+                    </h2>
+                    <p
+                        x-text="profileSummary"
+                        class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0"
+                    ></p>
+                    <div class="mt-7 grid gap-4 sm:grid-cols-2">
+                        <template x-for="fact in quickFacts" :key="fact.label">
+                            <div class="rounded-[24px] border border-cyan-400/40 bg-slate-950/45 p-5">
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="fact.label"></p>
+                                <p class="mt-3 text-base font-accent font-medium text-white" x-text="fact.value"></p>
+                            </div>
+                        </template>
+                    </div>
+                </article>
+
+                <!-- Graduation milestone card -->
+                <article class="overflow-hidden rounded-[34px] border border-white/10 bg-white/5 shadow-glow backdrop-blur-2xl">
+                    <div class="relative h-full min-h-[360px]">
+                        <img
+                            src="./img/me-2.jpeg"
+                            alt="Mahdi Valadan at graduation"
+                            class="absolute inset-0 h-full w-full object-cover"
+                        >
+                        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.88)_100%)]"></div>
+                        <div class="relative flex h-full flex-col justify-end p-7">
+                            <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-100">Recent milestone</p>
+                            <h2 class="mt-3 font-display text-4xl text-white">Master’s degree completed in Milan.</h2>
+                            <p class="mt-4 max-w-md text-sm leading-7 text-slate-200">
+                                Politecnico di Milano, with work spanning web systems, human-computer interaction, mobile applications, AI, and game development.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-16 lg:py-20">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:px-10">
+                <!-- Supporting portrait -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.2),transparent_55%)] blur-3xl"></div>
+                    <div class="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-3 shadow-glow backdrop-blur-2xl">
+                        <img
+                            src="./img/me.jpg"
+                            alt="Mahdi Valadan in Milan"
+                            class="h-[560px] w-full rounded-[30px] object-cover object-center"
+                        >
+                    </div>
+                </div>
+
+                <!-- About copy and focus cards -->
+                <div class="text-center lg:text-left" data-aos="fade-left">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">About</p>
+                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">
+                        I bring full-stack execution with a strong eye for product quality and interface feel.
+                    </h2>
+                    <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0">
+                        In practice, that means moving comfortably between frontend implementation, backend services,
+                        deployment, and product decisions. I like taking responsibility for how a product works end to
+                        end, while still caring about the visual system, interaction quality, and overall sense of finish.
+                    </p>
+
+                    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                        <template x-for="focus in focusAreas" :key="focus.title">
+                            <article class="rounded-[26px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="focus.title"></p>
+                                <p class="mt-3 text-sm leading-7 text-slate-200" x-text="focus.copy"></p>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-16 lg:py-20">
+            <div class="mx-auto max-w-7xl px-6 lg:px-10">
+                <!-- Section intro -->
+                <div class="text-center lg:text-left" data-aos="fade-up">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Experience</p>
+                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">
+                        A progression from frontend-focused roles into full-stack product ownership and delivery.
+                    </h2>
+                    <p class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0">
+                        My recent work spans implementation, backend services, deployment, and product infrastructure,
+                        with earlier roles building the foundation in frontend engineering, Django applications, and practical product development.
+                    </p>
+                </div>
+
+                <!-- Experience cards -->
+                <div class="mt-12 grid gap-6 xl:grid-cols-2">
+                    <template x-for="job in career" :key="job.company + job.period">
+                        <article
+                            class="rounded-[32px] border border-white/10 bg-white/5 p-7 shadow-glow backdrop-blur-2xl"
+                            data-aos="fade-up"
+                        >
+                            <div class="flex flex-wrap items-start justify-between gap-4">
+                                <div>
+                                    <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-200" x-text="job.company"></p>
+                                    <h3 class="mt-3 text-2xl font-semibold text-white" x-text="job.role"></h3>
+                                    <p class="mt-2 text-sm text-slate-300">
+                                        <span x-text="job.location"></span>
+                                        <span class="mx-2 text-slate-500">•</span>
+                                        <span x-text="job.period"></span>
+                                    </p>
+                                </div>
+                                <span class="rounded-full border border-white/10 bg-slate-950/55 px-4 py-2 text-xs uppercase tracking-[0.22em] text-slate-200" x-text="job.type"></span>
+                            </div>
+
+                            <p class="mt-5 text-sm leading-7 text-slate-300" x-text="job.summary"></p>
+
+                            <ul class="mt-6 space-y-3">
+                                <template x-for="bullet in job.bullets" :key="bullet">
+                                    <li class="flex gap-3 text-sm leading-7 text-slate-200">
+                                        <span class="mt-3 h-1.5 w-1.5 rounded-full bg-cyan-300"></span>
+                                        <span x-text="bullet"></span>
+                                    </li>
+                                </template>
+                            </ul>
+
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <template x-for="tool in job.stack" :key="tool">
+                                    <span class="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-50" x-text="tool"></span>
+                                </template>
+                            </div>
+                        </article>
                     </template>
-                </ul>
-            </div>
-        </section>
-        <!-- PROJECTS LINKS -->
-        <section id="projects">
-            <h1>Links to My Projects</h1>
-            <!-- Projects -->
-            <div class="projects-container" x-data="projects" data-aos="zoom-in">
-                <template x-for="project in projects">
-                    <a :href="project.url" target="_blank">
-                        <p x-text="project.name"></p>
-                        <i :class="project.icon"></i>
-                    </a>
-                </template>
-                <!-- <a style="visibility: hidden; flex: 1 1 auto"></a> -->
-            </div>
-            <!-- Accounts -->
-            <div class="projects-container" x-data="accounts" data-aos="zoom-in" style="margin-top:
-            50px;">
-                <template x-for="account in accounts">
-                    <a :href="account.url" target="_blank">
-                        <p x-text="account.name"></p>
-                        <img :src="account.icon" :alt="account.name">
-                    </a>
-                </template>
-                <!-- <a style="visibility: hidden; flex: 1 1 auto"></a> -->
-            </div>
-        </section>
-        <!-- Contact Info -->
-        <section id="contact">
-            <h1>Contact Info</h1>
-            <div class="social-links" data-aos="flip-up">
-                <div class="links">
-                    <a href="mailto:mahdivaladan@gmail.com" id="profile-link">
-                        <img src="./icon/email.png" alt="email">
-                        <h3>Email</h3>
-                    </a>
                 </div>
-                <div class="links">
-                    <a href="https://www.linkedin.com/in/mahdi-valadan-4a5762182/" id="profile-link" target="_blank">
-                        <img src="./icon/linkedin.png" alt="linkedin">
-                        <h3>Linkedin</h3>
-                    </a>
+            </div>
+        </section>
+
+        <!-- Education and skills -->
+        <section class="py-16 lg:py-20">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
+                <!-- Education and academic work -->
+                <div class="text-center lg:text-left" data-aos="fade-right">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Education</p>
+                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">Education, teaching work, and technical foundation.</h2>
+
+                    <div class="mt-8 space-y-5">
+                        <template x-for="item in education" :key="item.degree">
+                            <article class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                                <div class="flex flex-wrap items-start justify-between gap-4">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white" x-text="item.degree"></h3>
+                                        <p class="mt-2 text-sm text-cyan-100" x-text="item.school"></p>
+                                    </div>
+                                    <p class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="item.period"></p>
+                                </div>
+                                <p class="mt-4 text-sm leading-7 text-slate-300" x-text="item.summary"></p>
+                                <p class="mt-3 text-sm  leading-7 text-slate-300" x-text="item.gpa"></p>
+                                <p class="mt-4 text-sm leading-7 text-slate-400" x-text="item.details"></p>
+                            </article>
+                        </template>
+                    </div>
+
+                    <div class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-200">Academic experience</p>
+                        <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                            <template x-for="item in academicExperience" :key="item.role">
+                                <div class="rounded-[22px] border border-white/8 bg-slate-950/40 p-5">
+                                    <h3 class="text-base font-semibold text-white" x-text="item.role"></h3>
+                                    <p class="mt-2 text-sm text-slate-300" x-text="item.place"></p>
+                                    <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="item.period"></p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills and certificates -->
+                <div class="text-center lg:text-left" data-aos="fade-left">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Skills</p>
+                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">
+                        The tools and technologies I use most often in practice.
+                    </h2>
+
+                    <div class="mt-8 grid gap-5">
+                        <template x-for="group in skillGroups" :key="group.title">
+                            <article class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                                <div class="flex flex-wrap items-center justify-between gap-3">
+                                    <h3 class="text-xl font-semibold text-white" x-text="group.title"></h3>
+                                    <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="group.note"></span>
+                                </div>
+                                <div class="mt-5 flex flex-wrap gap-2.5">
+                                    <template x-for="item in group.items" :key="item">
+                                        <span class="rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-sm text-slate-200" x-text="item"></span>
+                                    </template>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+
+                    <div class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-200">Certificates</p>
+                        <div class="mt-5 flex flex-wrap gap-3">
+                            <template x-for="certificate in certificates" :key="certificate.title">
+                                <a
+                                    :href="certificate.url"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-50 transition hover:border-cyan-200/40 hover:bg-cyan-300/15"
+                                    x-text="certificate.title"
+                                ></a>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project showcase -->
+        <section id="projects" class="relative overflow-hidden py-16 lg:py-24">
+            <div class="absolute inset-0 bg-[url('./img/shape.jpg')] bg-cover bg-center opacity-[0.14]"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.82)_0%,rgba(2,6,23,0.92)_100%)]"></div>
+
+            <div class="relative mx-auto max-w-7xl px-6 lg:px-10" x-data="projectCarousel">
+                <!-- Section title -->
+                <div class="mx-auto max-w-3xl text-center" data-aos="fade-up">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Project showcase</p>
+                    <h2 class="mt-4 font-display text-4xl text-white lg:text-5xl">
+                        Selected projects across web, mobile, and game development.
+                    </h2>
+                    <p class="mt-5 text-base leading-8 text-slate-300">
+                        Use the arrows or drag the cards with the mouse to browse through the work.
+                    </p>
+                </div>
+
+                <!-- Carousel stage, controls, and active project details -->
+                <div class="mt-14 overflow-hidden" data-aos="fade-up">
+                    <div
+                        x-ref="stage"
+                        @mousemove="handleMouseMove($event)"
+                        @mouseleave="leaveStage()"
+                        @pointerdown="startDrag($event)"
+                        @pointermove="drag($event)"
+                        @pointerup="endDrag($event)"
+                        @pointercancel="leaveStage()"
+                        class="relative h-[360px] overflow-hidden cursor-grab select-none [perspective:1600px] [touch-action:pan-y] active:cursor-grabbing sm:h-[420px] lg:h-[500px]"
+                    >
+                        <!-- Project cards positioned in 3D space -->
+                        <template x-for="(project, index) in cards" :key="project.name">
+                            <article
+                                @click="setActive(index)"
+                                :style="cardStyle(index)"
+                                class="absolute left-1/2 top-1/2 h-[300px] w-[min(82vw,420px)] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[32px] border border-white/15 bg-white/10 p-6 shadow-glow backdrop-blur-[26px] transition-[transform,opacity,filter] duration-500 sm:h-[340px] lg:h-[380px]"
+                            >
+                                <div
+                                    class="absolute inset-0 opacity-70"
+                                    :style="'background:' + project.glow"
+                                ></div>
+                                <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(2,6,23,0.58)_100%)]"></div>
+
+                                <div class="relative flex h-full flex-col">
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex h-14 w-14 items-center justify-center rounded-[18px] border border-white/20 bg-slate-950/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
+                                                <i :class="project.icon" class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text text-3xl text-transparent"></i>
+                                            </div>
+                                            <span class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-100" x-text="project.category"></span>
+                                        </div>
+                                        <span class="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-200" x-text="project.period"></span>
+                                    </div>
+
+                                    <div class="mt-8">
+                                        <h3 class="text-3xl font-accent font-semibold text-white" x-text="project.name"></h3>
+                                        <p class="mt-4 text-sm leading-7 text-slate-100/90" x-text="project.summary"></p>
+                                    </div>
+
+                                    <div class="mt-auto flex flex-wrap gap-2">
+                                        <template x-for="tech in project.stack" :key="tech">
+                                            <span class="rounded-full border border-white/15 bg-slate-950/35 px-3 py-1 text-xs text-slate-100" x-text="tech"></span>
+                                        </template>
+                                    </div>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+
+                    <!-- Carousel controls -->
+                    <div class="mt-8 flex items-center justify-center gap-4">
+                        <button
+                            @click="prev"
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10"
+                            aria-label="Previous project"
+                        >
+                            <span class="material-icons text-[24px]">west</span>
+                        </button>
+
+                        <div class="flex items-center gap-2">
+                            <template x-for="(project, index) in cards" :key="project.name + '-dot'">
+                                <button
+                                    @click="setActive(index)"
+                                    :class="active === index ? 'w-8 bg-cyan-200' : 'w-2.5 bg-white/30'"
+                                    class="h-2.5 rounded-full transition-all duration-300"
+                                    :aria-label="'Show ' + project.name"
+                                ></button>
+                            </template>
+                        </div>
+
+                        <button
+                            @click="next"
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10"
+                            aria-label="Next project"
+                        >
+                            <span class="material-icons text-[24px]">east</span>
+                        </button>
+                    </div>
+
+                    <!-- Active project detail panel -->
+                    <article class="mx-auto mt-10 max-w-4xl rounded-[32px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
+                        <div class="flex flex-wrap items-start justify-between gap-6">
+                            <div class="max-w-2xl">
+                                <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200" x-text="activeProject.category"></p>
+                                <h3 class="mt-4 text-3xl font-semibold text-white" x-text="activeProject.name"></h3>
+                                <p class="mt-5 text-base leading-8 text-slate-300" x-text="activeProject.detail"></p>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-3 lg:justify-end">
+                                <a
+                                    :href="activeProject.demoUrl"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="rounded-full border border-cyan-300/35 bg-cyan-300/10 px-6 py-3 text-sm font-semibold text-cyan-50 transition hover:border-cyan-200/60 hover:bg-cyan-300/15"
+                                    x-text="activeProject.demoLabel"
+                                ></a>
+                                <a
+                                    :href="activeProject.codeUrl"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="rounded-full border border-pink-300/35 bg-pink-400/10 px-6 py-3 text-sm font-semibold text-pink-100 transition hover:border-pink-200/60 hover:bg-pink-400/15"
+                                    x-text="activeProject.codeLabel"
+                                ></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16 lg:py-20">
+            <div class="mx-auto max-w-7xl px-6 lg:px-10">
+                <!-- Contact section intro -->
+                <div data-aos="fade-up">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Contact</p>
+                    <h2 class="mt-4 font-display text-4xl text-white lg:text-5xl">
+                        Email for opportunities, LinkedIn for context, GitHub for the code trail.
+                    </h2>
+                    <p class="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+                        If you are building something around data-heavy products, modern web engineering, or interactive
+                        user experiences, I am open to the conversation.
+                    </p>
+                </div>
+
+                <!-- Contact cards -->
+                <div class="mt-12 grid gap-6 md:grid-cols-3">
+                    <template x-for="contact in contacts" :key="contact.label">
+                        <a
+                            :href="contact.href"
+                            :target="contact.external ? '_blank' : null"
+                            :rel="contact.external ? 'noreferrer' : null"
+                            class="group rounded-[30px] border border-white/10 bg-white/5 p-7 no-underline shadow-glow backdrop-blur-2xl transition hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/10"
+                            data-aos="flip-up"
+                        >
+                            <!-- Contact icon -->
+                            <template x-if="contact.label === 'GitHub'">
+                                <span
+                                    class="inline-flex h-14 w-14 items-center justify-center transition duration-300 group-hover:scale-105"
+                                    :aria-label="contact.label"
+                                >
+                                    <i class="devicon-github-original bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_55%,rgb(186_230_253)_100%)] bg-clip-text text-[56px] leading-none text-transparent"></i>
+                                </span>
+                            </template>
+                            <template x-if="contact.label !== 'GitHub'">
+                                <img
+                                    :src="contact.icon"
+                                    :alt="contact.label"
+                                    class="h-14 w-14 object-contain transition duration-300 group-hover:scale-105"
+                                >
+                            </template>
+                            <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-slate-400" x-text="contact.label"></p>
+                            <h3 class="mt-3 text-2xl font-semibold text-white" x-text="contact.value"></h3>
+                            <p class="mt-4 text-sm leading-7 text-slate-300" x-text="contact.note"></p>
+                        </a>
+                    </template>
                 </div>
             </div>
         </section>
     </main>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; Copyright 2021 designed by Mahdi Valadan</p>
-        <p>Icons made by
-            <a href="https://www.freepik.com" title="Freepik">
-                Freepik
-            </a>
-            &
-            <a href="https://www.flaticon.com/free-icons/email" title="email icons">
-                Uniconlabs
-            </a>
-            from
-            <a href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com
-            </a>
-        </p>
+    <footer class="border-t border-white/10 py-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+            <p>&copy; 2026 Mahdi Valadan.</p>
+            <p>
+                Icons by
+                <a href="https://www.freepik.com" title="Freepik" class="text-slate-300 hover:text-white">Freepik</a>
+                and
+                <a href="https://www.flaticon.com/free-icons/email" title="email icons" class="text-slate-300 hover:text-white">Uniconlabs</a>.
+            </p>
+        </div>
     </footer>
-    <!-- AOS Script -->
+
+    <!-- Scroll animation library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 900,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true,
+            offset: 80,
+        })
     </script>
 </body>
 </html>
