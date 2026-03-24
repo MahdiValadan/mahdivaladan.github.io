@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html class="scroll-smooth overflow-x-hidden" lang="en">
+
 <head>
     <!-- Page metadata -->
     <title>Mahdi Valadan</title>
     <meta charset="UTF-8">
-    <meta
-        name="description"
-        content="Mahdi Valadan is a full-stack developer in Italy focused on data-rich web platforms, WebGIS, modern frontend systems, and interactive applications."
-    >
+    <meta name="description"
+        content="Mahdi Valadan is a full-stack developer in Italy focused on data-rich web platforms, WebGIS, modern frontend systems, and interactive applications.">
     <meta name="keywords" content="Mahdi Valadan, Full-Stack Developer, Next.js, Python, WebGIS, Portfolio">
     <meta name="author" content="Mahdi Valadan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b1220">
     <link rel="icon" type="image/png" href="./icon/fox.png">
+    <link rel="preload" as="image" href="./img/me-1.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./img/dev-cyan.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Fleur+De+Leah&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Tailwind theme setup -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,94 +44,77 @@
             },
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    >
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="./styles.css">
     <!-- Local content and Alpine behavior -->
     <script defer src="script.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="min-h-screen overflow-x-hidden bg-[#050b16] font-body text-slate-100 selection:bg-cyan-300/25">
+
+<body class="is-loading min-h-screen overflow-x-hidden bg-[#050b16] font-body text-slate-100 selection:bg-cyan-300/25">
+    <div id="page-loader" aria-hidden="true">
+        <div class="loader-panel">
+            <span class="loader-mark">Mahdi Valadan</span>
+            <p class="loader-copy">Loading portfolio experience</p>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
     <!-- Background layers -->
-    <div class="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(148,163,184,0.12),transparent_24%),linear-gradient(180deg,#020617_0%,#071120_40%,#030712_100%)]"></div>
-    <div class="fixed inset-0 -z-10 bg-[url('./img/dev-cyan.png')] bg-cover bg-top opacity-[0.08]"></div>
+    <div
+        class="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(148,163,184,0.12),transparent_24%),linear-gradient(180deg,#020617_0%,#071120_40%,#030712_100%)]">
+    </div>
+    <div class="fixed inset-0 -z-10 bg-[url('./img/dev-cyan.webp')] bg-cover bg-top opacity-[0.08]"></div>
 
     <!-- Header and navigation -->
-    <header
-        x-data="menu"
-        class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/65 backdrop-blur-2xl"
-    >
+    <header x-data="menu" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/65 backdrop-blur-2xl">
         <div class="mx-auto flex items-center justify-between px-6 py-5 lg:px-10">
             <!-- Brand / logo -->
             <a href="#welcome-section" class="flex flex-col no-underline">
-                <span class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text font-logo text-3xl leading-none text-transparent lg:text-4xl">Mahdi Valadan</span>
+                <span
+                    class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text font-logo text-3xl leading-none text-transparent lg:text-4xl">Mahdi
+                    Valadan</span>
             </a>
 
             <!-- Mobile nav toggle -->
-            <button
-                @click="toggle"
-                aria-label="Toggle navigation menu"
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10 lg:hidden"
-            >
-                <span
-                    id="nav-button-icon"
-                    class="material-icons text-[30px]"
-                    x-text="icon"
-                ></span>
+            <button @click="toggle" aria-label="Toggle navigation menu"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10 lg:hidden">
+                <span id="nav-button-icon" class="material-icons text-[30px]" x-text="icon"></span>
             </button>
 
             <!-- Main navigation -->
-            <nav
-                class="fixed right-0 top-[81px] z-40 h-[calc(100vh-81px)] overflow-hidden border-l border-white/10 bg-slate-950/95 backdrop-blur-2xl transition-all duration-500 lg:static lg:z-auto lg:h-auto lg:w-auto lg:border-0 lg:bg-transparent lg:backdrop-blur-none"
-                :class="open ? 'w-full sm:w-[380px] lg:w-auto' : 'w-0 lg:w-auto'"
-            >
-                <ul class="flex h-full flex-col items-center justify-center gap-6 px-10 lg:h-auto lg:flex-row lg:gap-8 lg:px-0">
+            <nav class="fixed right-0 top-[81px] z-40 h-[calc(100vh-81px)] overflow-hidden border-l border-white/10 bg-slate-950/95 backdrop-blur-2xl transition-all duration-500 lg:static lg:z-auto lg:h-auto lg:w-auto lg:border-0 lg:bg-transparent lg:backdrop-blur-none"
+                :class="open ? 'w-full sm:w-[380px] lg:w-auto' : 'w-0 lg:w-auto'">
+                <ul
+                    class="flex h-full flex-col items-center justify-center gap-6 px-10 lg:h-auto lg:flex-row lg:gap-8 lg:px-0">
                     <li>
-                        <a
-                            href="#welcome-section"
-                            @click="close"
-                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
-                        >
+                        <a href="#welcome-section" @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="#about"
-                            @click="close"
-                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
-                        >
+                        <a href="#about" @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200">
                             About
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="#experience"
-                            @click="close"
-                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
-                        >
+                        <a href="#experience" @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200">
                             Experience
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="#projects"
-                            @click="close"
-                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
-                        >
+                        <a href="#projects" @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200">
                             Projects
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="#contact"
-                            @click="close"
-                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200"
-                        >
+                        <a href="#contact" @click="close"
+                            class="font-mono text-sm uppercase tracking-[0.28em] text-slate-200 transition hover:text-cyan-200">
                             Contact
                         </a>
                     </li>
@@ -142,21 +129,21 @@
             <div class="mx-auto grid max-w-7xl gap-14 px-6 pb-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-10">
                 <!-- Hero copy and actions -->
                 <div class="relative z-10 text-center lg:text-left" data-aos="fade-right">
-                    <span class="inline-flex max-w-full flex-wrap justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-center font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-100">
+                    <span
+                        class="inline-flex max-w-full flex-wrap justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-center font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-100">
                         Milan, Italy · Computer Engineer · Creative Tech
                     </span>
                     <h1 class="mt-7 max-w-4xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
                         Full-stack developer drawn to creative technology, games, and polished digital products.
                     </h1>
-                    <p
-                        x-text="heroSummary"
-                        class="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg lg:mx-0"
-                    ></p>
+                    <p x-text="heroSummary"
+                        class="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg lg:mx-0"></p>
 
                     <!-- Core focus tags -->
                     <div class="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
                         <template x-for="item in expertise" :key="item">
-                            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 shadow-glow">
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 shadow-glow">
                                 <span x-text="item"></span>
                             </span>
                         </template>
@@ -164,18 +151,12 @@
 
                     <!-- Primary actions -->
                     <div class="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
-                        <a
-                            href="#projects"
-                            class="rounded-full border border-teal-300/50 bg-teal-300/10 px-6 py-3 text-sm font-semibold text-teal-100 backdrop-blur-xl transition hover:border-teal-300 hover:bg-teal-300/15 hover:text-teal-200"
-                        >
+                        <a href="#projects"
+                            class="rounded-full border border-teal-300/50 bg-teal-300/10 px-6 py-3 text-sm font-semibold text-teal-100 backdrop-blur-xl transition hover:border-teal-300 hover:bg-teal-300/15 hover:text-teal-200">
                             View selected work
                         </a>
-                        <a
-                            href="./assets/CV-NN.pdf"
-                            target="_blank"
-                            rel="noreferrer"
-                            class="rounded-full border border-purple-300/50 bg-purple-900/30 px-6 py-3 text-sm font-semibold text-purple-100 backdrop-blur-xl transition hover:border-purple-300 hover:bg-purple-300/15 hover:text-purple-200"
-                        >
+                        <a href="./assets/CV-NN.pdf" target="_blank" rel="noreferrer"
+                            class="rounded-full border border-purple-300/50 bg-purple-900/30 px-6 py-3 text-sm font-semibold text-purple-100 backdrop-blur-xl transition hover:border-purple-300 hover:bg-purple-300/15 hover:text-purple-200">
                             Download CV
                         </a>
                     </div>
@@ -184,7 +165,8 @@
                     <div class="mt-12 grid gap-4 sm:grid-cols-3">
                         <template x-for="stat in introStats" :key="stat.label">
                             <article class="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="stat.label"></p>
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400"
+                                    x-text="stat.label"></p>
                                 <p class="mt-3 text-lg font-accent font-semibold text-white" x-text="stat.value"></p>
                                 <p class="mt-2 text-sm leading-6 text-slate-300" x-text="stat.note"></p>
                             </article>
@@ -193,25 +175,31 @@
                 </div>
 
                 <!-- Hero portrait composition -->
-                <div class="relative mx-auto flex w-full max-w-[520px] flex-col gap-4 px-2 sm:h-[480px] sm:block sm:px-0 lg:h-[620px]" data-aos="fade-left">
-                    <div class="absolute inset-0 hidden rounded-[40px] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.24),transparent_45%)] blur-3xl sm:block"></div>
-                    <div class="relative h-[500px] w-full overflow-hidden rounded-[34px] border border-white/15 bg-white/10 p-3 shadow-glow backdrop-blur-2xl sm:absolute sm:right-0 sm:top-4 sm:h-[420px] sm:w-[350px] lg:h-[540px] lg:w-[390px]">
-                        <img
-                            src="./img/me-1.jpg"
-                            alt="Mahdi Valadan portrait"
-                            class="h-full w-full rounded-[28px] object-cover object-center"
-                        >
+                <div class="relative mx-auto flex w-full max-w-[520px] flex-col gap-4 px-2 sm:h-[480px] sm:block sm:px-0 lg:h-[620px]"
+                    data-aos="fade-left">
+                    <div
+                        class="absolute inset-0 hidden rounded-[40px] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.24),transparent_45%)] blur-3xl sm:block">
                     </div>
-                    <div class="relative w-full rounded-[28px] border border-white/10 bg-slate-900/75 p-4 shadow-glow backdrop-blur-xl sm:absolute sm:left-0 sm:-top-12 sm:max-w-[230px] sm:p-5">
+                    <div
+                        class="relative h-[500px] w-full overflow-hidden rounded-[34px] border border-white/15 bg-white/10 p-3 shadow-glow backdrop-blur-2xl sm:absolute sm:right-0 sm:top-4 sm:h-[420px] sm:w-[350px] lg:h-[540px] lg:w-[390px]">
+                        <img src="./img/me-1.webp" alt="Mahdi Valadan portrait" width="702" height="1273"
+                            fetchpriority="high" decoding="async"
+                            class="h-full w-full rounded-[28px] object-cover object-center">
+                    </div>
+                    <div
+                        class="relative w-full rounded-[28px] border border-white/10 bg-slate-900/75 p-4 shadow-glow backdrop-blur-xl sm:absolute sm:left-0 sm:-top-12 sm:max-w-[230px] sm:p-5">
                         <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-200">Current focus</p>
                         <p class="mt-3 font-accent text-xs font-medium leading-7 text-white sm:leading-8">
-                            Building production web products while continuing to explore games, interaction, and more expressive digital experiences.
+                            Building production web products while continuing to explore games, interaction, and more
+                            expressive digital experiences.
                         </p>
                     </div>
-                    <div class="relative w-full rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-glow backdrop-blur-xl sm:absolute sm:-bottom-4 sm:left-0 sm:max-w-[230px] sm:p-5">
+                    <div
+                        class="relative w-full rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-glow backdrop-blur-xl sm:absolute sm:-bottom-4 sm:left-0 sm:max-w-[230px] sm:p-5">
                         <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-slate-300">How I work</p>
                         <p class="mt-3 text-xs leading-7 text-slate-100 sm:leading-8">
-                            Detail-oriented, disciplined, and focused on making the final result feel refined, coherent, and complete.
+                            Detail-oriented, disciplined, and focused on making the final result feel refined, coherent,
+                            and complete.
                         </p>
                     </div>
                 </div>
@@ -222,19 +210,19 @@
         <section class="relative -mt-6 pb-8" data-aos="fade-up">
             <div class="mx-auto grid max-w-7xl gap-6 px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-10">
                 <!-- Profile summary card -->
-                <article class="rounded-[34px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
+                <article
+                    class="rounded-[34px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
                     <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Profile</p>
                     <h2 class="mx-auto mt-4 max-w-3xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">
                         Art, nature, and attention to detail shape the way I see and build digital work.
                     </h2>
-                    <p
-                        x-text="profileSummary"
-                        class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0"
-                    ></p>
+                    <p x-text="profileSummary"
+                        class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0"></p>
                     <div class="mt-7 grid gap-4 sm:grid-cols-2">
                         <template x-for="fact in quickFacts" :key="fact.label">
                             <div class="rounded-[24px] border border-cyan-400/40 bg-slate-950/45 p-5">
-                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="fact.label"></p>
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400"
+                                    x-text="fact.label"></p>
                                 <p class="mt-3 text-base font-accent font-medium text-white" x-text="fact.value"></p>
                             </div>
                         </template>
@@ -242,20 +230,25 @@
                 </article>
 
                 <!-- Graduation milestone card -->
-                <article class="overflow-hidden rounded-[34px] border border-white/10 bg-white/5 shadow-glow backdrop-blur-2xl">
+                <article
+                    class="overflow-hidden rounded-[34px] border border-white/10 bg-white/5 shadow-glow backdrop-blur-2xl">
                     <div class="relative h-full min-h-[560px] sm:min-h-[360px]">
-                        <img
-                            src="./img/me-2.jpeg"
-                            alt="Mahdi Valadan at graduation"
-                            class="absolute inset-0 h-full w-full object-cover object-[center_18%] sm:object-center"
-                        >
-                        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_12%,rgba(2,6,23,0.22)_52%,rgba(2,6,23,0.82)_100%)] sm:bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.88)_100%)]"></div>
+                        <img src="./img/me-2.webp" alt="Mahdi Valadan at graduation" width="3213" height="5712"
+                            loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover object-[center_18%] sm:object-center">
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_12%,rgba(2,6,23,0.22)_52%,rgba(2,6,23,0.82)_100%)] sm:bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.88)_100%)]">
+                        </div>
                         <div class="relative flex h-full flex-col justify-end p-4 sm:p-7">
                             <div class="max-w-[290px] sm:max-w-[320px]">
-                                <p class="font-mono text-[10px] uppercase tracking-[0.32em] text-cyan-100">Recent milestone</p>
-                                <h2 class="mt-3 font-display text-lg leading-tight text-white sm:text-xl">Master’s degree completed in Milan.</h2>
-                                <p class="mt-3 text-xs leading-6 text-slate-200 sm:max-w-[320px] sm:text-xs sm:leading-6">
-                                    Politecnico di Milano, with work spanning web systems, human-computer interaction, mobile applications, AI, and game development.
+                                <p class="font-mono text-[10px] uppercase tracking-[0.32em] text-cyan-100">Recent
+                                    milestone</p>
+                                <h2 class="mt-3 font-display text-lg leading-tight text-white sm:text-xl">Master’s
+                                    degree completed in Milan.</h2>
+                                <p
+                                    class="mt-3 text-xs leading-6 text-slate-200 sm:max-w-[320px] sm:text-xs sm:leading-6">
+                                    Politecnico di Milano, with work spanning web systems, human-computer interaction,
+                                    mobile applications, AI, and game development.
                                 </p>
                             </div>
                         </div>
@@ -269,13 +262,13 @@
             <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:px-10">
                 <!-- Supporting portrait -->
                 <div class="relative" data-aos="fade-right">
-                    <div class="absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.2),transparent_55%)] blur-3xl"></div>
-                    <div class="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-3 shadow-glow backdrop-blur-2xl">
-                        <img
-                            src="./img/me.jpg"
-                            alt="Mahdi Valadan in Milan"
-                            class="h-[560px] w-full rounded-[30px] object-cover object-center"
-                        >
+                    <div
+                        class="absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.2),transparent_55%)] blur-3xl">
+                    </div>
+                    <div
+                        class="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-3 shadow-glow backdrop-blur-2xl">
+                        <img src="./img/me.webp" alt="Mahdi Valadan in Milan" width="3024" height="4032" loading="lazy"
+                            decoding="async" class="h-[560px] w-full rounded-[30px] object-cover object-center">
                     </div>
                 </div>
 
@@ -288,13 +281,15 @@
                     <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0">
                         In practice, that means moving comfortably between frontend implementation, backend services,
                         deployment, and product decisions. I like taking responsibility for how a product works end to
-                        end, while still caring about the visual system, interaction quality, and overall sense of finish.
+                        end, while still caring about the visual system, interaction quality, and overall sense of
+                        finish.
                     </p>
 
                     <div class="mt-8 grid gap-4 sm:grid-cols-2">
                         <template x-for="focus in focusAreas" :key="focus.title">
                             <article class="rounded-[26px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400" x-text="focus.title"></p>
+                                <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400"
+                                    x-text="focus.title"></p>
                                 <p class="mt-3 text-sm leading-7 text-slate-200" x-text="focus.copy"></p>
                             </article>
                         </template>
@@ -314,7 +309,8 @@
                     </h2>
                     <p class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 lg:mx-0">
                         My recent work spans implementation, backend services, deployment, and product infrastructure,
-                        with earlier roles building the foundation in frontend engineering, Django applications, and practical product development.
+                        with earlier roles building the foundation in frontend engineering, Django applications, and
+                        practical product development.
                     </p>
                 </div>
 
@@ -323,11 +319,11 @@
                     <template x-for="job in career" :key="job.company + job.period">
                         <article
                             class="rounded-[32px] border border-white/10 bg-white/5 p-7 shadow-glow backdrop-blur-2xl"
-                            data-aos="fade-up"
-                        >
+                            data-aos="fade-up">
                             <div class="flex flex-wrap items-start justify-between gap-4">
                                 <div>
-                                    <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-200" x-text="job.company"></p>
+                                    <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-200"
+                                        x-text="job.company"></p>
                                     <h3 class="mt-3 text-2xl font-semibold text-white" x-text="job.role"></h3>
                                     <p class="mt-2 text-sm text-slate-300">
                                         <span x-text="job.location"></span>
@@ -335,7 +331,9 @@
                                         <span x-text="job.period"></span>
                                     </p>
                                 </div>
-                                <span class="rounded-full border border-white/10 bg-slate-950/55 px-4 py-2 text-xs uppercase tracking-[0.22em] text-slate-200" x-text="job.type"></span>
+                                <span
+                                    class="rounded-full border border-white/10 bg-slate-950/55 px-4 py-2 text-xs uppercase tracking-[0.22em] text-slate-200"
+                                    x-text="job.type"></span>
                             </div>
 
                             <p class="mt-5 text-sm leading-7 text-slate-300" x-text="job.summary"></p>
@@ -351,7 +349,9 @@
 
                             <div class="mt-6 flex flex-wrap gap-2">
                                 <template x-for="tool in job.stack" :key="tool">
-                                    <span class="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-50" x-text="tool"></span>
+                                    <span
+                                        class="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-50"
+                                        x-text="tool"></span>
                                 </template>
                             </div>
                         </article>
@@ -366,17 +366,20 @@
                 <!-- Education and academic work -->
                 <div class="text-center lg:text-left" data-aos="fade-right">
                     <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200">Education</p>
-                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">Education, teaching work, and technical foundation.</h2>
+                    <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl text-white lg:mx-0 lg:text-5xl">Education,
+                        teaching work, and technical foundation.</h2>
 
                     <div class="mt-8 space-y-5">
                         <template x-for="item in education" :key="item.degree">
-                            <article class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                            <article
+                                class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
                                 <div class="flex flex-wrap items-start justify-between gap-4">
                                     <div>
                                         <h3 class="text-xl font-semibold text-white" x-text="item.degree"></h3>
                                         <p class="mt-2 text-sm text-cyan-100" x-text="item.school"></p>
                                     </div>
-                                    <p class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="item.period"></p>
+                                    <p class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400"
+                                        x-text="item.period"></p>
                                 </div>
                                 <p class="mt-4 text-sm leading-7 text-slate-300" x-text="item.summary"></p>
                                 <p class="mt-3 text-sm  leading-7 text-slate-300" x-text="item.gpa"></p>
@@ -385,14 +388,17 @@
                         </template>
                     </div>
 
-                    <div class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
-                        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-200">Academic experience</p>
+                    <div
+                        class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-200">Academic experience
+                        </p>
                         <div class="mt-5 grid gap-4 sm:grid-cols-2">
                             <template x-for="item in academicExperience" :key="item.role">
                                 <div class="rounded-[22px] border border-white/8 bg-slate-950/40 p-5">
                                     <h3 class="text-base font-semibold text-white" x-text="item.role"></h3>
                                     <p class="mt-2 text-sm text-slate-300" x-text="item.place"></p>
-                                    <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="item.period"></p>
+                                    <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400"
+                                        x-text="item.period"></p>
                                 </div>
                             </template>
                         </div>
@@ -408,31 +414,32 @@
 
                     <div class="mt-8 grid gap-5">
                         <template x-for="group in skillGroups" :key="group.title">
-                            <article class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                            <article
+                                class="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
                                 <div class="flex flex-wrap items-center justify-between gap-3">
                                     <h3 class="text-xl font-semibold text-white" x-text="group.title"></h3>
-                                    <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400" x-text="group.note"></span>
+                                    <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400"
+                                        x-text="group.note"></span>
                                 </div>
                                 <div class="mt-5 flex flex-wrap gap-2.5">
                                     <template x-for="item in group.items" :key="item">
-                                        <span class="rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-sm text-slate-200" x-text="item"></span>
+                                        <span
+                                            class="rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-sm text-slate-200"
+                                            x-text="item"></span>
                                     </template>
                                 </div>
                             </article>
                         </template>
                     </div>
 
-                    <div class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
+                    <div
+                        class="mt-8 rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-2xl">
                         <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-200">Certificates</p>
                         <div class="mt-5 flex flex-wrap gap-3">
                             <template x-for="certificate in certificates" :key="certificate.title">
-                                <a
-                                    :href="certificate.url"
-                                    target="_blank"
-                                    rel="noreferrer"
+                                <a :href="certificate.url" target="_blank" rel="noreferrer"
                                     class="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-50 transition hover:border-cyan-200/40 hover:bg-cyan-300/15"
-                                    x-text="certificate.title"
-                                ></a>
+                                    x-text="certificate.title"></a>
                             </template>
                         </div>
                     </div>
@@ -442,8 +449,8 @@
 
         <!-- Project showcase -->
         <section id="projects" class="relative overflow-hidden py-16 lg:py-24">
-            <div class="absolute inset-0 bg-[url('./img/shape.jpg')] bg-cover bg-center opacity-[0.14]"></div>
-            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.82)_0%,rgba(2,6,23,0.92)_100%)]"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.82)_0%,rgba(2,6,23,0.92)_100%)]">
+            </div>
 
             <div class="relative mx-auto max-w-7xl px-6 lg:px-10" x-data="projectCarousel">
                 <!-- Section title -->
@@ -459,48 +466,47 @@
 
                 <!-- Carousel stage, controls, and active project details -->
                 <div class="mt-14 overflow-hidden" data-aos="fade-up">
-                    <div
-                        x-ref="stage"
-                        @mousemove="handleMouseMove($event)"
-                        @mouseleave="leaveStage()"
-                        @pointerdown="startDrag($event)"
-                        @pointermove="drag($event)"
-                        @pointerup="endDrag($event)"
+                    <div x-ref="stage" @mousemove="handleMouseMove($event)" @mouseleave="leaveStage()"
+                        @pointerdown="startDrag($event)" @pointermove="drag($event)" @pointerup="endDrag($event)"
                         @pointercancel="leaveStage()"
-                        class="relative h-[360px] overflow-hidden cursor-grab select-none [perspective:1600px] [touch-action:pan-y] active:cursor-grabbing sm:h-[420px] lg:h-[500px]"
-                    >
+                        class="relative h-[360px] overflow-hidden cursor-grab select-none [perspective:1600px] [touch-action:pan-y] active:cursor-grabbing sm:h-[420px] lg:h-[500px]">
                         <!-- Project cards positioned in 3D space -->
                         <template x-for="(project, index) in cards" :key="project.name">
-                            <article
-                                @click="setActive(index)"
-                                :style="cardStyle(index)"
-                                class="absolute left-1/2 top-1/2 h-[300px] w-[min(82vw,420px)] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[32px] border border-white/15 bg-white/10 p-6 shadow-glow backdrop-blur-[26px] transition-[transform,opacity,filter] duration-500 sm:h-[340px] lg:h-[380px]"
-                            >
+                            <article @click="setActive(index)" :style="cardStyle(index)"
+                                class="absolute left-1/2 top-1/2 h-[300px] w-[min(82vw,420px)] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[32px] border border-white/15 bg-white/10 p-6 shadow-glow backdrop-blur-[26px] transition-[transform,opacity,filter] duration-500 sm:h-[340px] lg:h-[380px]">
+                                <div class="absolute inset-0 opacity-70" :style="'background:' + project.glow"></div>
                                 <div
-                                    class="absolute inset-0 opacity-70"
-                                    :style="'background:' + project.glow"
-                                ></div>
-                                <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(2,6,23,0.58)_100%)]"></div>
+                                    class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(2,6,23,0.58)_100%)]">
+                                </div>
 
                                 <div class="relative flex h-full flex-col">
                                     <div class="flex items-start justify-between gap-4">
                                         <div class="flex items-center gap-3">
-                                            <div class="flex h-14 w-14 items-center justify-center rounded-[18px] border border-white/20 bg-slate-950/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
-                                                <i :class="project.icon" class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text text-3xl text-transparent"></i>
+                                            <div
+                                                class="flex h-14 w-14 items-center justify-center rounded-[18px] border border-white/20 bg-slate-950/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
+                                                <i :class="project.icon"
+                                                    class="bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_52%,rgb(186_230_253)_100%)] bg-clip-text text-3xl text-transparent"></i>
                                             </div>
-                                            <span class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-100" x-text="project.category"></span>
+                                            <span
+                                                class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-100"
+                                                x-text="project.category"></span>
                                         </div>
-                                        <span class="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-200" x-text="project.period"></span>
+                                        <span class="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-200"
+                                            x-text="project.period"></span>
                                     </div>
 
                                     <div class="mt-8">
-                                        <h3 class="text-3xl font-accent font-semibold text-white" x-text="project.name"></h3>
-                                        <p class="mt-4 text-sm leading-7 text-slate-100/90" x-text="project.summary"></p>
+                                        <h3 class="text-3xl font-accent font-semibold text-white" x-text="project.name">
+                                        </h3>
+                                        <p class="mt-4 text-sm leading-7 text-slate-100/90" x-text="project.summary">
+                                        </p>
                                     </div>
 
                                     <div class="mt-auto flex flex-wrap gap-2">
                                         <template x-for="tech in project.stack" :key="tech">
-                                            <span class="rounded-full border border-white/15 bg-slate-950/35 px-3 py-1 text-xs text-slate-100" x-text="tech"></span>
+                                            <span
+                                                class="rounded-full border border-white/15 bg-slate-950/35 px-3 py-1 text-xs text-slate-100"
+                                                x-text="tech"></span>
                                         </template>
                                     </div>
                                 </div>
@@ -510,57 +516,45 @@
 
                     <!-- Carousel controls -->
                     <div class="mt-8 flex items-center justify-center gap-4">
-                        <button
-                            @click="prev"
+                        <button @click="prev"
                             class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10"
-                            aria-label="Previous project"
-                        >
+                            aria-label="Previous project">
                             <span class="material-icons text-[24px]">west</span>
                         </button>
 
                         <div class="flex items-center gap-2">
                             <template x-for="(project, index) in cards" :key="project.name + '-dot'">
-                                <button
-                                    @click="setActive(index)"
+                                <button @click="setActive(index)"
                                     :class="active === index ? 'w-8 bg-cyan-200' : 'w-2.5 bg-white/30'"
                                     class="h-2.5 rounded-full transition-all duration-300"
-                                    :aria-label="'Show ' + project.name"
-                                ></button>
+                                    :aria-label="'Show ' + project.name"></button>
                             </template>
                         </div>
 
-                        <button
-                            @click="next"
+                        <button @click="next"
                             class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/40 hover:bg-white/10"
-                            aria-label="Next project"
-                        >
+                            aria-label="Next project">
                             <span class="material-icons text-[24px]">east</span>
                         </button>
                     </div>
 
                     <!-- Active project detail panel -->
-                    <article class="mx-auto mt-10 max-w-4xl rounded-[32px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
+                    <article
+                        class="mx-auto mt-10 max-w-4xl rounded-[32px] border border-white/10 bg-white/5 p-7 text-center shadow-glow backdrop-blur-2xl lg:p-8 lg:text-left">
                         <div class="flex flex-wrap items-start justify-between gap-6">
                             <div class="max-w-2xl">
-                                <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200" x-text="activeProject.category"></p>
+                                <p class="font-mono text-[11px] uppercase tracking-[0.32em] text-cyan-200"
+                                    x-text="activeProject.category"></p>
                                 <h3 class="mt-4 text-3xl font-semibold text-white" x-text="activeProject.name"></h3>
                                 <p class="mt-5 text-base leading-8 text-slate-300" x-text="activeProject.detail"></p>
                             </div>
                             <div class="flex flex-wrap justify-center gap-3 lg:justify-end">
-                                <a
-                                    :href="activeProject.demoUrl"
-                                    target="_blank"
-                                    rel="noreferrer"
+                                <a :href="activeProject.demoUrl" target="_blank" rel="noreferrer"
                                     class="rounded-full border border-cyan-300/35 bg-cyan-300/10 px-6 py-3 text-sm font-semibold text-cyan-50 transition hover:border-cyan-200/60 hover:bg-cyan-300/15"
-                                    x-text="activeProject.demoLabel"
-                                ></a>
-                                <a
-                                    :href="activeProject.codeUrl"
-                                    target="_blank"
-                                    rel="noreferrer"
+                                    x-text="activeProject.demoLabel"></a>
+                                <a :href="activeProject.codeUrl" target="_blank" rel="noreferrer"
                                     class="rounded-full border border-pink-300/35 bg-pink-400/10 px-6 py-3 text-sm font-semibold text-pink-100 transition hover:border-pink-200/60 hover:bg-pink-400/15"
-                                    x-text="activeProject.codeLabel"
-                                ></a>
+                                    x-text="activeProject.codeLabel"></a>
                             </div>
                         </div>
                     </article>
@@ -586,30 +580,26 @@
                 <!-- Contact cards -->
                 <div class="mt-12 grid gap-6 md:grid-cols-3">
                     <template x-for="contact in contacts" :key="contact.label">
-                        <a
-                            :href="contact.href"
-                            :target="contact.external ? '_blank' : null"
+                        <a :href="contact.href" :target="contact.external ? '_blank' : null"
                             :rel="contact.external ? 'noreferrer' : null"
                             class="group rounded-[30px] border border-white/10 bg-white/5 p-7 no-underline shadow-glow backdrop-blur-2xl transition hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/10"
-                            data-aos="flip-up"
-                        >
+                            data-aos="flip-up">
                             <!-- Contact icon -->
                             <template x-if="contact.label === 'GitHub'">
                                 <span
                                     class="inline-flex h-14 w-14 items-center justify-center transition duration-300 group-hover:scale-105"
-                                    :aria-label="contact.label"
-                                >
-                                    <i class="devicon-github-original bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_55%,rgb(186_230_253)_100%)] bg-clip-text text-[56px] leading-none text-transparent"></i>
+                                    :aria-label="contact.label">
+                                    <i
+                                        class="devicon-github-original bg-[linear-gradient(135deg,oklch(68.5%_0.169_237.323)_0%,rgb(125_211_252)_55%,rgb(186_230_253)_100%)] bg-clip-text text-[56px] leading-none text-transparent"></i>
                                 </span>
                             </template>
                             <template x-if="contact.label !== 'GitHub'">
-                                <img
-                                    :src="contact.icon"
-                                    :alt="contact.label"
-                                    class="h-14 w-14 object-contain transition duration-300 group-hover:scale-105"
-                                >
+                                <img :src="contact.icon" :alt="contact.label" width="512" height="512" loading="lazy"
+                                    decoding="async"
+                                    class="h-14 w-14 object-contain transition duration-300 group-hover:scale-105">
                             </template>
-                            <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-slate-400" x-text="contact.label"></p>
+                            <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-slate-400"
+                                x-text="contact.label"></p>
                             <h3 class="mt-3 text-2xl font-semibold text-white" x-text="contact.value"></h3>
                             <p class="mt-4 text-sm leading-7 text-slate-300" x-text="contact.note"></p>
                         </a>
@@ -621,27 +611,21 @@
 
     <!-- Footer -->
     <footer class="border-t border-white/10 py-8">
-        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+        <div
+            class="mx-auto flex max-w-7xl flex-col gap-3 px-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-10">
             <p>&copy; 2026 Mahdi Valadan.</p>
             <p>
                 Icons by
                 <a href="https://www.freepik.com" title="Freepik" class="text-slate-300 hover:text-white">Freepik</a>
                 and
-                <a href="https://www.flaticon.com/free-icons/email" title="email icons" class="text-slate-300 hover:text-white">Uniconlabs</a>.
+                <a href="https://www.flaticon.com/free-icons/email" title="email icons"
+                    class="text-slate-300 hover:text-white">Uniconlabs</a>.
             </p>
         </div>
     </footer>
 
     <!-- Scroll animation library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 900,
-            easing: 'ease-out-cubic',
-            once: false,
-            mirror: true,
-            offset: 80,
-        })
-    </script>
 </body>
+
 </html>

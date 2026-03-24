@@ -1,0 +1,103 @@
+body.is-loading {
+    overflow: hidden;
+}
+
+#page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(148, 163, 184, 0.12), transparent 24%),
+        linear-gradient(180deg, #020617 0%, #071120 40%, #030712 100%);
+    transition: opacity 420ms ease, visibility 420ms ease;
+}
+
+#page-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-panel {
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+    min-width: min(88vw, 420px);
+    padding: 32px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 30px 80px rgba(8, 15, 30, 0.45);
+}
+
+.loader-mark {
+    font-family: "Fleur De Leah", cursive;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    line-height: 1;
+    background: linear-gradient(135deg, oklch(68.5% 0.169 237.323) 0%, rgb(125 211 252) 52%, rgb(186 230 253) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader-copy {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgb(186 230 253);
+}
+
+.loader-bar {
+    position: relative;
+    width: min(240px, 60vw);
+    height: 3px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.loader-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, rgba(34, 211, 238, 0), rgba(186, 230, 253, 0.95), rgba(34, 211, 238, 0));
+    animation: loader-sweep 1.15s ease-in-out infinite;
+}
+
+@keyframes loader-sweep {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+    40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+.animate-swing {
+    transform-origin: top center;
+    animation: swing 1s ease;
+}

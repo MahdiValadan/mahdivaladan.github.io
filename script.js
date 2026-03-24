@@ -364,6 +364,59 @@ const contacts = [
     },
 ]
 
+let aosInitialized = false
+let aosRefreshTimer = 0
+let pageReady = false
+
+const initializeAOS = () => {
+    if (aosInitialized || !window.AOS) {
+        return
+    }
+
+    window.AOS.init({
+        duration: 900,
+        easing: 'ease-out-cubic',
+        once: false,
+        mirror: true,
+        offset: 80,
+    })
+
+    aosInitialized = true
+}
+
+const revealPage = () => {
+    if (pageReady) {
+        return
+    }
+
+    pageReady = true
+
+    document.body.classList.remove('is-loading')
+
+    const loader = document.getElementById('page-loader')
+    if (loader) {
+        loader.classList.add('is-hidden')
+        window.setTimeout(() => {
+            loader.remove()
+        }, 500)
+    }
+
+    initializeAOS()
+}
+
+const finishInitialLoad = () => {
+    const reveal = () => {
+        window.setTimeout(revealPage, 120)
+    }
+
+    if (document.fonts?.ready) {
+        document.fonts.ready.then(reveal).catch(reveal)
+        return
+    }
+
+    reveal()
+}
+
 // Small UI animation for the mobile menu icon.
 const animateMenuIcon = () => {
     const icon = document.getElementById('nav-button-icon')
@@ -371,21 +424,21 @@ const animateMenuIcon = () => {
         return
     }
 
-    icon.classList.add('animate__animated', 'animate__swing')
+    icon.classList.add('animate-swing')
     icon.addEventListener('animationend', () => {
-        icon.classList.remove('animate__animated', 'animate__swing')
+        icon.classList.remove('animate-swing')
     }, { once: true })
 }
 
 // Refresh AOS after anchor navigation so section animations can replay.
 const refreshScrollAnimations = () => {
-    window.setTimeout(() => {
-        if (window.AOS?.refreshHard) {
-            window.AOS.refreshHard()
-            return
-        }
+    if (!aosInitialized) {
+        return
+    }
 
-        window.AOS?.refresh?.()
+    window.clearTimeout(aosRefreshTimer)
+    aosRefreshTimer = window.setTimeout(() => {
+        window.AOS?.refreshHard?.()
     }, 180)
 }
 
@@ -563,6 +616,12 @@ if (window.Alpine) {
     registerAlpineComponents()
 } else {
     document.addEventListener('alpine:init', registerAlpineComponents)
+}
+
+if (document.readyState === 'complete') {
+    finishInitialLoad()
+} else {
+    window.addEventListener('load', finishInitialLoad, { once: true })
 }
 
 // Re-trigger section animations after hash navigation.
