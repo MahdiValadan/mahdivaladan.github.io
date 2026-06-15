@@ -473,10 +473,10 @@
                         <!-- Project cards positioned in 3D space -->
                         <template x-for="(project, index) in cards" :key="project.name">
                             <article @click="setActive(index)" :style="cardStyle(index)"
-                                class="absolute left-1/2 top-1/2 h-[300px] w-[min(82vw,420px)] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[32px] border border-white/15 bg-white/10 p-6 shadow-glow backdrop-blur-[26px] transition-[transform,opacity,filter] duration-500 sm:h-[340px] lg:h-[380px]">
-                                <div class="absolute inset-0 opacity-70" :style="'background:' + project.glow"></div>
+                                class="project-card-solid absolute left-1/2 top-1/2 h-[300px] w-[min(82vw,420px)] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[32px] border border-cyan-100/15 p-6 transition-[transform,opacity] duration-500 sm:h-[340px] lg:h-[380px]">
+                                <div class="absolute inset-0 opacity-60" :style="'background:' + project.glow"></div>
                                 <div
-                                    class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(2,6,23,0.58)_100%)]">
+                                    class="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.02)_38%,rgba(2,6,23,0.46)_100%)]">
                                 </div>
 
                                 <div class="relative flex h-full flex-col">

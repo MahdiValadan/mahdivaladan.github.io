@@ -79,6 +79,16 @@ body.is-loading {
     }
 }
 
+.project-card-solid {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.035) 36%, rgba(2, 6, 23, 0.12) 100%),
+        linear-gradient(135deg, #111827 0%, #172033 52%, #0b1120 100%);
+    box-shadow:
+        0 22px 56px rgba(2, 6, 23, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -1px 0 rgba(2, 6, 23, 0.58);
+}
+
 @keyframes swing {
     20% {
         transform: rotate3d(0, 0, 1, 15deg);

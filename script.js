@@ -530,10 +530,9 @@ const registerAlpineComponents = () => {
             const rotateX = diff === 0 ? this.tiltX : 0
             const scale = abs === 0 ? 1 : abs === 1 ? 0.86 : 0.68
             const opacity = abs === 0 ? 1 : abs === 1 ? 0.62 : 0.18
-            const blur = abs === 0 ? 0 : abs === 1 ? 0.8 : 2.2
             const zIndex = 40 - abs
 
-            return `transform: translate3d(calc(-50% + ${translateX}%), -50%, ${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale}); opacity: ${opacity}; filter: blur(${blur}px); z-index: ${zIndex};`
+            return `transform: translate3d(calc(-50% + ${translateX}%), -50%, ${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale}); opacity: ${opacity}; z-index: ${zIndex};`
         },
         // Move to the next project card.
         next() {
