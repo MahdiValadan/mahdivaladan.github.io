@@ -1,3 +1,11 @@
+/* On desktop, scale the whole page to 90% (like browser zoom at 90%).
+   Sizes use rem, so everything shrinks together. */
+@media (min-width: 1024px) {
+    html {
+        font-size: 90%;
+    }
+}
+
 body.is-loading {
     overflow: hidden;
 }
@@ -110,4 +118,75 @@ body.is-loading {
 .animate-swing {
     transform-origin: top center;
     animation: swing 1s ease;
+}
+
+/* Fade the About artwork into the page: a soft fade toward the text on the left,
+   and only a short fade at the top and bottom so it lines up with the text column. */
+.about-art {
+    -webkit-mask-image:
+        linear-gradient(90deg, transparent 0%, #000 22%, #000 88%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+        linear-gradient(90deg, transparent 0%, #000 22%, #000 88%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-composite: intersect;
+}
+
+/* Education background art: slow orbiting dot and a gently swaying tassel. */
+.edu-art .edu-orbit {
+    transform-origin: 240px 200px;
+    animation: edu-orbit 40s linear infinite;
+}
+
+.edu-art .edu-tassel {
+    transform-origin: 240px 160px;
+    animation: edu-sway 7s ease-in-out infinite;
+}
+
+@keyframes edu-orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes edu-sway {
+    0%, 100% {
+        transform: rotate(-1.5deg);
+    }
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .edu-art .edu-orbit,
+    .edu-art .edu-tassel {
+        animation: none;
+    }
+}
+
+/* Projects background art: the two drawings float gently, slightly out of step. */
+.projects-float {
+    animation: projects-float 9s ease-in-out infinite;
+}
+
+.projects-float-alt {
+    animation: projects-float 11s ease-in-out -4s infinite;
+}
+
+@keyframes projects-float {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projects-float,
+    .projects-float-alt {
+        animation: none;
+    }
 }

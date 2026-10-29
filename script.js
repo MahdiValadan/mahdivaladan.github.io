@@ -1,24 +1,24 @@
 // Profile-driven content pulled from the CV.
-const heroSummary = 'I work across frontend, backend, and interactive systems, but the part I connect with most is creative technology. I like building products that feel clear, expressive, and genuinely enjoyable to use.'
+const heroSummary = 'I design, build, and run complete products: carefully crafted interfaces, backend services and APIs, and the servers and infrastructure underneath. I am happiest when a project needs both technical depth and visual care.'
 
 const profileSummary = 'A lot of my perspective comes from art, nature, and the way small details change how something feels. That carries into my work through discipline, patience, and a strong preference for products that feel considered rather than rushed.'
 
 // Short labels and chips used in the hero/profile sections.
 const expertise = [
-    'Full-Stack Development',
+    'Full-Stack Product Development',
+    'Deployment & Infrastructure',
     'Data Visualization',
-    'Interactive Applications',
-    'Creative Technologies',
-    'UX/UI Design',
+    'UI/UX Design',
+    'Creative Technology',
     'Game Development',
     // 'WebGIS Products',
 ]
 
 const introStats = [
     {
-        label: 'Current role',
+        label: 'Latest role',
         value: 'Full-Stack Developer',
-        note: 'NHAZCA, focused on a WebGIS data visualization platform.',
+        note: 'NHAZCA, building ISABHEL, an ESA-funded bridge monitoring platform.',
     },
     {
         label: 'Core stack',
@@ -35,7 +35,7 @@ const introStats = [
 const quickFacts = [
     {
         label: 'Current location',
-        value: 'Milan and Rome, Italy',
+        value: 'Milan, Italy',
     },
     {
         label: 'Main interest',
@@ -77,16 +77,16 @@ const career = [
         role: 'Full-Stack Developer',
         type: 'Contract',
         location: 'Rome, Italy',
-        period: 'Apr 2025 - Present',
-        summary: 'Developing and deploying a WebGIS data visualization platform with responsibility across frontend, backend, spatial services, deployment, and product infrastructure.',
+        period: 'Apr 2025 - Jun 2026',
+        summary: 'Designed, built, and deployed the web platform for ISABHEL, an ESA-funded structural health monitoring project combining satellite InSAR data and ground-sensor measurements for bridges in Turin.',
         bullets: [
-            'Building the platform with Next.js and Python for data-rich, map-centric user workflows.',
-            'Creating geospatial tile services with Mapbox, TileServer GL, TiTiler, and MinIO.',
-            'Managing spatial data with Supabase, PostgreSQL, and PostGIS.',
-            'Deploying services with Docker, Coolify, Dokploy, and Vercel, while maintaining Ubuntu server workflows over SSH and Git.',
-            'Integrating platform services such as Mailgun and AI development tooling including Codex and Claude.',
+            'Built interactive map and time-series visualizations that let engineers analyse bridge deformation and structural behaviour over time and across sensors.',
+            'Developed the geospatial tile-serving layer with TiTiler, TileServer GL, and MinIO, delivering raster and vector tiles to a Mapbox frontend.',
+            'Designed and maintained the spatial database on PostgreSQL/PostGIS (Supabase) for satellite and sensor datasets.',
+            'Set up and operated production infrastructure on Ubuntu servers using Docker, Coolify, and Dokploy, with Vercel for frontend hosting.',
+            'Built backend services and APIs, including transactional email with Mailgun.',
         ],
-        stack: ['Next.js', 'Python', 'Mapbox', 'PostGIS', 'Docker', 'Vercel'],
+        stack: ['Next.js', 'Python', 'Mapbox', 'PostGIS', 'TiTiler', 'Docker', 'Vercel'],
     },
     {
         company: 'NHAZCA',
@@ -108,11 +108,11 @@ const career = [
         type: 'Part-time',
         location: 'Tehran, Iran',
         period: 'Oct 2022 - Mar 2023',
-        summary: 'Worked on an AI-based medical image segmentation project, building frontend components and improving the user experience around technically complex workflows.',
+        summary: 'Built the front end for an AI-based medical image segmentation tool, used by clinicians and researchers to upload scans and review segmentation results.',
         bullets: [
-            'Implemented user-facing interfaces for an AI-assisted medical product.',
-            'Focused on frontend polish, usability, and clearer interaction flow.',
-            'Collaborated within an applied AI environment using Tailwind CSS, JavaScript, and Django templates.',
+            'Built the interfaces clinicians and researchers use to upload scans and review segmentation results.',
+            'Developed a responsive, minimal, modern UI.',
+            'Worked with Tailwind CSS, JavaScript, and Django templates.',
         ],
         stack: ['Tailwind CSS', 'JavaScript', 'Django Templates'],
     },
@@ -135,7 +135,7 @@ const career = [
         role: 'Python Developer',
         type: 'Summer Job',
         location: 'Tehran, Iran',
-        period: 'Aug 2020 - Sep 2020',
+        period: 'Jun 2020 - Aug 2020',
         summary: 'Contributed to a research-oriented software project focused on automatic updates of spatial databases using satellite imagery.',
         bullets: [
             'Worked on a geospatial workflow grounded in spatial data automation.',
@@ -151,12 +151,12 @@ const academicExperience = [
     {
         role: 'Teaching Assistant, Internet Engineering',
         place: 'K. N. Toosi University of Technology',
-        period: '2021 - 2022',
+        period: 'Feb 2021 - Sep 2021',
     },
     {
         role: 'Teaching Assistant, Compiler Design',
         place: 'K. N. Toosi University of Technology',
-        period: '2020',
+        period: 'Feb 2020 - Jul 2020',
     },
 ]
 
@@ -167,7 +167,6 @@ const education = [
         school: 'Politecnico di Milano',
         period: 'Sep 2022 - Dec 2025',
         summary: 'Thesis: Modeling Value Detection in Dyadic Conversations for Human-Human and Human-Agent Well-being Coaching.',
-        gpa: 'GPA: 88/110',
         details: 'Selected coursework included video game development and design, advanced user interfaces, hypermedia applications, artificial neural networks and deep learning, mobile applications, and multidisciplinary projects.',
     },
     {
@@ -175,7 +174,6 @@ const education = [
         school: 'K. N. Toosi University of Technology',
         period: 'Sep 2017 - Jul 2022',
         summary: 'Thesis: Design and Development of an Interest-free Loan System with Software as a Service Approach.',
-        gpa: 'GPA: 16.6/20',
         details: 'Core coursework included software engineering, software testing, system analysis and design, artificial intelligence, speech and language processing, data structures, databases, and advanced programming.',
     },
 ]
@@ -185,22 +183,29 @@ const skillGroups = [
     {
         title: 'Frontend',
         note: 'Interface and product implementation',
-        items: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt.js', 'React', 'Next.js', 'HTML', 'CSS', 'Tailwind CSS'],
+        items: ['JavaScript', 'TypeScript', 'React', 'Vue', 'Next.js', 'Nuxt.js', 'HTML', 'CSS', 'Tailwind CSS'],
     },
     {
         title: 'Backend',
-        note: 'Services, APIs, and data handling',
-        items: ['Python', 'Express.js', 'Supabase', 'SQL / NoSQL databases'],
+        note: 'Services and APIs',
+        items: ['Python', 'Express.js', 'Django'],
     },
     {
-        title: 'Mobile & Game',
-        note: 'Interactive app and gameplay work',
-        items: ['Flutter', 'Unity (C#)'],
+        title: 'Databases',
+        note: 'Relational, spatial, and document data',
+        items: ['PostgreSQL', 'PostGIS', 'Supabase', 'Firebase', 'MongoDB'],
     },
     {
         title: 'Tools & Platforms',
         note: 'Deployment, infrastructure, and workflow',
         items: ['Git', 'Ubuntu', 'SSH', 'Docker', 'Dokploy', 'Coolify', 'Vercel', 'Mapbox', 'TiTiler', 'TileServer GL', 'MinIO', 'QGIS', 'Mailgun'],
+        // Spans two columns on wide screens.
+        wide: true,
+    },
+    {
+        title: 'Mobile & Game',
+        note: 'Interactive app and gameplay work',
+        items: ['Flutter', 'Unity (C#)'],
     },
     {
         title: 'AI Tools',
@@ -239,7 +244,7 @@ const projects = [
     {
         name: 'The Doomed Dog',
         category: 'Game Development',
-        period: '2024',
+        period: '2023 - 2024',
         summary: 'A 3D action and adventure PC game developed at Politecnico di Milano.',
         detail: 'I contributed to gameplay and interface work in Unity, helping shape the experience of a university game project that balanced mechanics, clarity, and player feel.',
         stack: ['Unity', 'C#', 'Game Mechanics', 'UI'],
@@ -267,7 +272,7 @@ const projects = [
     {
         name: 'Nico',
         category: 'Interactive Learning',
-        period: '2024',
+        period: '2023 - 2024',
         summary: 'A social learning game for children with autism and related social challenges.',
         detail: 'I worked as team leader and developer on an interactive Unity project that explored how playful systems and GPT-assisted interaction can support educational and social learning contexts.',
         stack: ['Unity', 'OpenAI GPT', 'Game Design'],
@@ -350,7 +355,7 @@ const contacts = [
         label: 'LinkedIn',
         value: 'Mahdi Valadan',
         note: 'Professional background, current roles, and network context.',
-        href: 'https://www.linkedin.com/in/mahdi-valadan-4a5762182/',
+        href: 'https://www.linkedin.com/in/mahdi-valadan/',
         icon: './icon/linkedin.png',
         external: true,
     },
@@ -477,6 +482,10 @@ const registerAlpineComponents = () => {
 
     // Page-level content exposed to the HTML templates.
     Alpine.data('portfolioContent', () => ({
+        // Reuse the project cards' glow colours so all card sections share one look.
+        cardGlow(index) {
+            return projects[index % projects.length].glow
+        },
         heroSummary,
         profileSummary,
         expertise,
@@ -608,6 +617,268 @@ const registerAlpineComponents = () => {
         },
     }))
 
+}
+
+// Generative flow-field art for the About section.
+// Each seed picks a palette and field shape; particles follow the field and leave glowing trails.
+const startAboutArt = () => {
+    const canvas = document.getElementById('about-art')
+    if (!canvas) {
+        return
+    }
+
+    const ctx = canvas.getContext('2d')
+    const seedLabel = document.getElementById('about-art-seed')
+    const regenButton = document.getElementById('about-art-regen')
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const TAU = Math.PI * 2
+
+    const palettes = [
+        ['#22d3ee', '#7dd3fc', '#bae6fd', '#0ea5e9'],
+        ['#2dd4bf', '#22d3ee', '#a78bfa', '#e0f2fe'],
+        ['#f472b6', '#a78bfa', '#7dd3fc', '#fde68a'],
+        ['#38bdf8', '#818cf8', '#c084fc', '#f0abfc'],
+        ['#34d399', '#2dd4bf', '#facc15', '#e2e8f0'],
+        ['#fb7185', '#fdba74', '#7dd3fc', '#e0e7ff'],
+    ]
+
+    // Small seeded random generator so a seed always draws the same piece.
+    const mulberry32 = (a) => () => {
+        a |= 0
+        a = (a + 0x6d2b79f5) | 0
+        let t = Math.imul(a ^ (a >>> 15), 1 | a)
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+    }
+
+    // Smooth 3D value noise built on a seeded lattice.
+    const makeNoise = (rand) => {
+        const size = 256
+        const perm = new Uint8Array(size * 2)
+        const values = new Float32Array(size)
+        for (let i = 0; i < size; i++) {
+            perm[i] = i
+            values[i] = rand()
+        }
+        for (let i = size - 1; i > 0; i--) {
+            const j = Math.floor(rand() * (i + 1))
+            const tmp = perm[i]
+            perm[i] = perm[j]
+            perm[j] = tmp
+        }
+        for (let i = 0; i < size; i++) {
+            perm[i + size] = perm[i]
+        }
+
+        const fade = (t) => t * t * (3 - 2 * t)
+        const lerp = (a, b, t) => a + (b - a) * t
+        const at = (x, y, z) => values[perm[perm[perm[x & 255] + (y & 255)] + (z & 255)]]
+
+        return (x, y, z) => {
+            const xi = Math.floor(x)
+            const yi = Math.floor(y)
+            const zi = Math.floor(z)
+            const u = fade(x - xi)
+            const v = fade(y - yi)
+            const w = fade(z - zi)
+            const x0 = lerp(lerp(at(xi, yi, zi), at(xi + 1, yi, zi), u), lerp(at(xi, yi + 1, zi), at(xi + 1, yi + 1, zi), u), v)
+            const x1 = lerp(lerp(at(xi, yi, zi + 1), at(xi + 1, yi, zi + 1), u), lerp(at(xi, yi + 1, zi + 1), at(xi + 1, yi + 1, zi + 1), u), v)
+            return lerp(x0, x1, w)
+        }
+    }
+
+    let width = 0
+    let height = 0
+    let particles = []
+    let settings = null
+    let noise = null
+    let rand = Math.random
+    let frame = 0
+    let rafId = 0
+    let visible = true
+    const pointer = { x: 0, y: 0, active: false, radius: 140 }
+
+    const resize = () => {
+        const rect = canvas.getBoundingClientRect()
+        const dpr = Math.min(window.devicePixelRatio || 1, 2)
+        width = Math.max(1, rect.width)
+        height = Math.max(1, rect.height)
+        canvas.width = Math.round(width * dpr)
+        canvas.height = Math.round(height * dpr)
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+    }
+
+    const spawn = (p) => {
+        p.x = rand() * width
+        p.y = rand() * height
+        p.px = p.x
+        p.py = p.y
+        p.life = 0
+        p.maxLife = 80 + rand() * 220
+        p.color = settings.palette[Math.floor(rand() * settings.palette.length)]
+        p.speed = settings.speed * (0.6 + rand() * 0.8)
+        return p
+    }
+
+    const generate = (seed) => {
+        rand = mulberry32(seed)
+        noise = makeNoise(rand)
+        settings = {
+            palette: palettes[Math.floor(rand() * palettes.length)],
+            scale: 0.0018 + rand() * 0.004,
+            swirl: 1 + rand() * 3,
+            speed: 0.8 + rand() * 1.6,
+            lineWidth: 0.6 + rand() * 1.4,
+            drift: 0.0015 + rand() * 0.004,
+            fade: 0.035 + rand() * 0.05,
+            count: Math.round(Math.min(900, (width * height) / 380)),
+        }
+        particles = Array.from({ length: settings.count }, () => spawn({}))
+        frame = 0
+
+        ctx.clearRect(0, 0, width, height)
+
+        if (seedLabel) {
+            seedLabel.textContent = `Seed #${seed.toString(16).padStart(6, '0').slice(-6)}`
+        }
+    }
+
+    const step = (fadeTrails) => {
+        // Erase a little each frame so trails fade to transparent and the page shows through.
+        if (fadeTrails) {
+            ctx.globalCompositeOperation = 'destination-out'
+            ctx.fillStyle = `rgba(0, 0, 0, ${settings.fade})`
+            ctx.fillRect(0, 0, width, height)
+        }
+
+        ctx.globalCompositeOperation = 'lighter'
+        ctx.lineWidth = settings.lineWidth
+        ctx.lineCap = 'round'
+        const z = frame * settings.drift
+
+        for (const p of particles) {
+            let angle = noise(p.x * settings.scale, p.y * settings.scale, z) * TAU * settings.swirl
+
+            // Near the cursor, particles bend into a swirl around it.
+            if (pointer.active) {
+                const dx = p.x - pointer.x
+                const dy = p.y - pointer.y
+                const dist = Math.hypot(dx, dy)
+                if (dist < pointer.radius) {
+                    const pull = 1 - dist / pointer.radius
+                    const orbit = Math.atan2(dy, dx) + Math.PI / 2
+                    angle += Math.atan2(Math.sin(orbit - angle), Math.cos(orbit - angle)) * pull
+                }
+            }
+
+            p.px = p.x
+            p.py = p.y
+            p.x += Math.cos(angle) * p.speed
+            p.y += Math.sin(angle) * p.speed
+            p.life++
+
+            // Fade each trail in and out over its lifetime.
+            const t = p.life / p.maxLife
+            ctx.globalAlpha = Math.sin(Math.PI * Math.min(t, 1)) * 0.6
+            ctx.strokeStyle = p.color
+            ctx.beginPath()
+            ctx.moveTo(p.px, p.py)
+            ctx.lineTo(p.x, p.y)
+            ctx.stroke()
+
+            if (p.life > p.maxLife || p.x < -10 || p.x > width + 10 || p.y < -10 || p.y > height + 10) {
+                spawn(p)
+            }
+        }
+
+        ctx.globalAlpha = 1
+        frame++
+    }
+
+    // The fade step never takes alpha all the way to zero (8-bit rounding), which leaves a faint
+    // haze over the section background. Periodically wipe those near-invisible pixels.
+    const clearGhosts = () => {
+        const image = ctx.getImageData(0, 0, canvas.width, canvas.height)
+        const data = image.data
+        for (let i = 3; i < data.length; i += 4) {
+            if (data[i] < 24) {
+                data[i] = 0
+            }
+        }
+        ctx.putImageData(image, 0, 0)
+    }
+
+    const loop = () => {
+        step(true)
+        if (frame % 45 === 0) {
+            clearGhosts()
+        }
+        rafId = visible ? requestAnimationFrame(loop) : 0
+    }
+
+    const render = (seed) => {
+        cancelAnimationFrame(rafId)
+        rafId = 0
+        resize()
+        generate(seed)
+
+        if (reduceMotion) {
+            // Draw a still image instead of animating.
+            for (let i = 0; i < 260; i++) {
+                step(false)
+            }
+            return
+        }
+
+        if (visible) {
+            rafId = requestAnimationFrame(loop)
+        }
+    }
+
+    let currentSeed = Math.floor(Math.random() * 0xffffff)
+    const regenerate = () => {
+        currentSeed = Math.floor(Math.random() * 0xffffff)
+        render(currentSeed)
+    }
+
+    canvas.addEventListener('click', regenerate)
+    canvas.addEventListener('pointermove', (event) => {
+        const rect = canvas.getBoundingClientRect()
+        pointer.x = event.clientX - rect.left
+        pointer.y = event.clientY - rect.top
+        pointer.active = true
+    })
+    canvas.addEventListener('pointerleave', () => {
+        pointer.active = false
+    })
+    regenButton?.addEventListener('click', regenerate)
+
+    // Only animate while the canvas is on screen.
+    new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting
+        if (visible && settings && !rafId && !reduceMotion) {
+            rafId = requestAnimationFrame(loop)
+        }
+    }).observe(canvas)
+
+    let resizeTimer = 0
+    let lastSize = ''
+    new ResizeObserver(([entry]) => {
+        // Redraw when either dimension changes, since the canvas now follows the text column's height.
+        const newSize = `${Math.round(entry.contentRect.width)}x${Math.round(entry.contentRect.height)}`
+        if (newSize === lastSize) {
+            return
+        }
+        lastSize = newSize
+        window.clearTimeout(resizeTimer)
+        resizeTimer = window.setTimeout(() => render(currentSeed), 150)
+    }).observe(canvas)
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startAboutArt, { once: true })
+} else {
+    startAboutArt()
 }
 
 // Register Alpine components whether Alpine is already available or still loading.
