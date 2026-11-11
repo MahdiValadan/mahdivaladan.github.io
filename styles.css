@@ -190,3 +190,50 @@ body.is-loading {
         animation: none;
     }
 }
+
+/* Experience background art: a dash travels along the route and the flag waves. */
+.exp-art .exp-route {
+    animation: exp-route 6s linear infinite;
+}
+
+.exp-art .exp-flag {
+    transform-origin: 430px 83px;
+    animation: exp-flag 5s ease-in-out infinite;
+}
+
+@keyframes exp-route {
+    to {
+        stroke-dashoffset: -240;
+    }
+}
+
+@keyframes exp-flag {
+    0%, 100% {
+        transform: rotate(-1.5deg);
+    }
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+/* Skills background art: network nodes softly twinkle. */
+.skills-art .skills-node {
+    animation: skills-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes skills-twinkle {
+    0%, 100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .exp-art .exp-route,
+    .exp-art .exp-flag,
+    .skills-art .skills-node {
+        animation: none;
+    }
+}
